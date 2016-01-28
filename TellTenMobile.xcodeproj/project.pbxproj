@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		620A5EFB1C4CA8B9008EB71E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A5EFA1C4CA8B9008EB71E /* AppDelegate.swift */; };
+		620A5EFD1C4CA8B9008EB71E /* ContactLisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A5EFC1C4CA8B9008EB71E /* ContactLisViewController.swift */; };
+		620A5F001C4CA8B9008EB71E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620A5EFE1C4CA8B9008EB71E /* Main.storyboard */; };
+		620A5F031C4CA8B9008EB71E /* TellTenMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 620A5F011C4CA8B9008EB71E /* TellTenMobile.xcdatamodeld */; };
+		620A5F051C4CA8B9008EB71E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 620A5F041C4CA8B9008EB71E /* Assets.xcassets */; };
+		620A5F101C4CAD62008EB71E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620A5F0F1C4CAD62008EB71E /* AddressBook.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		6226FE711C5103B800FA70BF /* telten_mobile.png in Resources */ = {isa = PBXBuildFile; fileRef = 6226FE701C5103B800FA70BF /* telten_mobile.png */; };
+		6226FE731C51075900FA70BF /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6226FE721C51075900FA70BF /* images.xcassets */; };
+		6226FE781C51119500FA70BF /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6226FE741C51119500FA70BF /* Icon-60@2x.png */; };
+		6226FE791C51119500FA70BF /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6226FE751C51119500FA70BF /* Icon-60@3x.png */; };
+		6226FE7F1C51128B00FA70BF /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6226FE7D1C51128B00FA70BF /* Icon-40@2x.png */; };
+		6226FE801C51128B00FA70BF /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6226FE7E1C51128B00FA70BF /* Icon-40@3x.png */; };
+		6250B8F11C4E1B94009D6735 /* ContacListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250B8F01C4E1B94009D6735 /* ContacListTableViewCell.swift */; };
+		6250B8F31C4E5291009D6735 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250B8F21C4E5291009D6735 /* CustomColor.swift */; };
+		629985211C4F52AF0068BB41 /* ChooseStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629985201C4F52AF0068BB41 /* ChooseStoreViewController.swift */; };
+		629985231C4F624B0068BB41 /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629985221C4F624B0068BB41 /* CouponViewController.swift */; };
+		629CF6C51C50C26200A8F4C1 /* UncheckArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6C31C50C26200A8F4C1 /* UncheckArrow.png */; };
+		629CF6C61C50C26200A8F4C1 /* checkArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6C41C50C26200A8F4C1 /* checkArrow.png */; };
+		629CF6C91C50E87700A8F4C1 /* dropdown-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6C81C50E87700A8F4C1 /* dropdown-arrow.png */; };
+		629CF6CB1C50F17100A8F4C1 /* coupon-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6CA1C50F17100A8F4C1 /* coupon-bg.png */; };
+		629CF6DC1C50FD1100A8F4C1 /* 750-x-1334.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6D71C50FD1100A8F4C1 /* 750-x-1334.png */; };
+		629CF6DD1C50FD1100A8F4C1 /* 320-x-480.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6D81C50FD1100A8F4C1 /* 320-x-480.png */; };
+		629CF6DE1C50FD1100A8F4C1 /* 640X960.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6D91C50FD1100A8F4C1 /* 640X960.png */; };
+		629CF6DF1C50FD1100A8F4C1 /* 640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6DA1C50FD1100A8F4C1 /* 640x1136.png */; };
+		629CF6E01C50FD1100A8F4C1 /* 1242-x-2208.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6DB1C50FD1100A8F4C1 /* 1242-x-2208.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		620A5EF71C4CA8B9008EB71E /* TellTenMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TellTenMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		620A5EFA1C4CA8B9008EB71E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		620A5EFC1C4CA8B9008EB71E /* ContactLisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLisViewController.swift; sourceTree = "<group>"; };
+		620A5EFF1C4CA8B9008EB71E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		620A5F021C4CA8B9008EB71E /* TellTenMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TellTenMobile.xcdatamodel; sourceTree = "<group>"; };
+		620A5F041C4CA8B9008EB71E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		620A5F091C4CA8B9008EB71E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		620A5F0F1C4CAD62008EB71E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		6226FE701C5103B800FA70BF /* telten_mobile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = telten_mobile.png; path = images/telten_mobile.png; sourceTree = SOURCE_ROOT; };
+		6226FE721C51075900FA70BF /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
+		6226FE741C51119500FA70BF /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "images/icon images/Icon-60@2x.png"; sourceTree = SOURCE_ROOT; };
+		6226FE751C51119500FA70BF /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@3x.png"; path = "images/icon images/Icon-60@3x.png"; sourceTree = SOURCE_ROOT; };
+		6226FE7D1C51128B00FA70BF /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40@2x.png"; path = "images/icon images/Icon-40@2x.png"; sourceTree = SOURCE_ROOT; };
+		6226FE7E1C51128B00FA70BF /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40@3x.png"; path = "images/icon images/Icon-40@3x.png"; sourceTree = SOURCE_ROOT; };
+		6250B8F01C4E1B94009D6735 /* ContacListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContacListTableViewCell.swift; sourceTree = "<group>"; };
+		6250B8F21C4E5291009D6735 /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		629985201C4F52AF0068BB41 /* ChooseStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseStoreViewController.swift; sourceTree = "<group>"; };
+		629985221C4F624B0068BB41 /* CouponViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponViewController.swift; sourceTree = "<group>"; };
+		629CF6C31C50C26200A8F4C1 /* UncheckArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UncheckArrow.png; path = images/TickImages/UncheckArrow.png; sourceTree = SOURCE_ROOT; };
+		629CF6C41C50C26200A8F4C1 /* checkArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkArrow.png; path = images/TickImages/checkArrow.png; sourceTree = SOURCE_ROOT; };
+		629CF6C81C50E87700A8F4C1 /* dropdown-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dropdown-arrow.png"; path = "images/arrow image/dropdown-arrow.png"; sourceTree = SOURCE_ROOT; };
+		629CF6CA1C50F17100A8F4C1 /* coupon-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "coupon-bg.png"; path = "images/coupon image/coupon-bg.png"; sourceTree = SOURCE_ROOT; };
+		629CF6D71C50FD1100A8F4C1 /* 750-x-1334.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "750-x-1334.png"; path = "images/Spalsh Screen/750-x-1334.png"; sourceTree = SOURCE_ROOT; };
+		629CF6D81C50FD1100A8F4C1 /* 320-x-480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "320-x-480.png"; path = "images/Spalsh Screen/320-x-480.png"; sourceTree = SOURCE_ROOT; };
+		629CF6D91C50FD1100A8F4C1 /* 640X960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 640X960.png; path = "images/Spalsh Screen/640X960.png"; sourceTree = SOURCE_ROOT; };
+		629CF6DA1C50FD1100A8F4C1 /* 640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 640x1136.png; path = "images/Spalsh Screen/640x1136.png"; sourceTree = SOURCE_ROOT; };
+		629CF6DB1C50FD1100A8F4C1 /* 1242-x-2208.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1242-x-2208.png"; path = "images/Spalsh Screen/1242-x-2208.png"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		620A5EF41C4CA8B9008EB71E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				620A5F101C4CAD62008EB71E /* AddressBook.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		620A5EEE1C4CA8B9008EB71E = {
+			isa = PBXGroup;
+			children = (
+				620A5F0F1C4CAD62008EB71E /* AddressBook.framework */,
+				620A5EF91C4CA8B9008EB71E /* TellTenMobile */,
+				620A5EF81C4CA8B9008EB71E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		620A5EF81C4CA8B9008EB71E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				620A5EF71C4CA8B9008EB71E /* TellTenMobile.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		620A5EF91C4CA8B9008EB71E /* TellTenMobile */ = {
+			isa = PBXGroup;
+			children = (
+				6226FE7C1C5111A000FA70BF /* Icon Images */,
+				6226FE701C5103B800FA70BF /* telten_mobile.png */,
+				629CF6E11C50FD1800A8F4C1 /* Splash Screen */,
+				620A5EFA1C4CA8B9008EB71E /* AppDelegate.swift */,
+				629985201C4F52AF0068BB41 /* ChooseStoreViewController.swift */,
+				620A5EFC1C4CA8B9008EB71E /* ContactLisViewController.swift */,
+				6250B8F01C4E1B94009D6735 /* ContacListTableViewCell.swift */,
+				629985221C4F624B0068BB41 /* CouponViewController.swift */,
+				6250B8F21C4E5291009D6735 /* CustomColor.swift */,
+				629CF6C71C50C26900A8F4C1 /* checkImages */,
+				620A5EFE1C4CA8B9008EB71E /* Main.storyboard */,
+				620A5F041C4CA8B9008EB71E /* Assets.xcassets */,
+				620A5F091C4CA8B9008EB71E /* Info.plist */,
+				620A5F011C4CA8B9008EB71E /* TellTenMobile.xcdatamodeld */,
+				6226FE721C51075900FA70BF /* images.xcassets */,
+			);
+			path = TellTenMobile;
+			sourceTree = "<group>";
+		};
+		6226FE7C1C5111A000FA70BF /* Icon Images */ = {
+			isa = PBXGroup;
+			children = (
+				6226FE7D1C51128B00FA70BF /* Icon-40@2x.png */,
+				6226FE7E1C51128B00FA70BF /* Icon-40@3x.png */,
+				6226FE741C51119500FA70BF /* Icon-60@2x.png */,
+				6226FE751C51119500FA70BF /* Icon-60@3x.png */,
+			);
+			name = "Icon Images";
+			sourceTree = "<group>";
+		};
+		629CF6C71C50C26900A8F4C1 /* checkImages */ = {
+			isa = PBXGroup;
+			children = (
+				629CF6CA1C50F17100A8F4C1 /* coupon-bg.png */,
+				629CF6C81C50E87700A8F4C1 /* dropdown-arrow.png */,
+				629CF6C31C50C26200A8F4C1 /* UncheckArrow.png */,
+				629CF6C41C50C26200A8F4C1 /* checkArrow.png */,
+			);
+			name = checkImages;
+			sourceTree = "<group>";
+		};
+		629CF6E11C50FD1800A8F4C1 /* Splash Screen */ = {
+			isa = PBXGroup;
+			children = (
+				629CF6D71C50FD1100A8F4C1 /* 750-x-1334.png */,
+				629CF6D81C50FD1100A8F4C1 /* 320-x-480.png */,
+				629CF6D91C50FD1100A8F4C1 /* 640X960.png */,
+				629CF6DA1C50FD1100A8F4C1 /* 640x1136.png */,
+				629CF6DB1C50FD1100A8F4C1 /* 1242-x-2208.png */,
+			);
+			name = "Splash Screen";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		620A5EF61C4CA8B9008EB71E /* TellTenMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 620A5F0C1C4CA8B9008EB71E /* Build configuration list for PBXNativeTarget "TellTenMobile" */;
+			buildPhases = (
+				620A5EF31C4CA8B9008EB71E /* Sources */,
+				620A5EF41C4CA8B9008EB71E /* Frameworks */,
+				620A5EF51C4CA8B9008EB71E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TellTenMobile;
+			productName = TellTenMobile;
+			productReference = 620A5EF71C4CA8B9008EB71E /* TellTenMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		620A5EEF1C4CA8B9008EB71E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = kbs;
+				TargetAttributes = {
+					620A5EF61C4CA8B9008EB71E = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 620A5EF21C4CA8B9008EB71E /* Build configuration list for PBXProject "TellTenMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 620A5EEE1C4CA8B9008EB71E;
+			productRefGroup = 620A5EF81C4CA8B9008EB71E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				620A5EF61C4CA8B9008EB71E /* TellTenMobile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		620A5EF51C4CA8B9008EB71E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				629CF6E01C50FD1100A8F4C1 /* 1242-x-2208.png in Resources */,
+				6226FE731C51075900FA70BF /* images.xcassets in Resources */,
+				629CF6DC1C50FD1100A8F4C1 /* 750-x-1334.png in Resources */,
+				6226FE781C51119500FA70BF /* Icon-60@2x.png in Resources */,
+				629CF6CB1C50F17100A8F4C1 /* coupon-bg.png in Resources */,
+				6226FE7F1C51128B00FA70BF /* Icon-40@2x.png in Resources */,
+				6226FE801C51128B00FA70BF /* Icon-40@3x.png in Resources */,
+				629CF6DD1C50FD1100A8F4C1 /* 320-x-480.png in Resources */,
+				6226FE791C51119500FA70BF /* Icon-60@3x.png in Resources */,
+				629CF6DF1C50FD1100A8F4C1 /* 640x1136.png in Resources */,
+				629CF6C51C50C26200A8F4C1 /* UncheckArrow.png in Resources */,
+				629CF6DE1C50FD1100A8F4C1 /* 640X960.png in Resources */,
+				629CF6C91C50E87700A8F4C1 /* dropdown-arrow.png in Resources */,
+				6226FE711C5103B800FA70BF /* telten_mobile.png in Resources */,
+				629CF6C61C50C26200A8F4C1 /* checkArrow.png in Resources */,
+				620A5F051C4CA8B9008EB71E /* Assets.xcassets in Resources */,
+				620A5F001C4CA8B9008EB71E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		620A5EF31C4CA8B9008EB71E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				620A5EFD1C4CA8B9008EB71E /* ContactLisViewController.swift in Sources */,
+				620A5F031C4CA8B9008EB71E /* TellTenMobile.xcdatamodeld in Sources */,
+				620A5EFB1C4CA8B9008EB71E /* AppDelegate.swift in Sources */,
+				6250B8F31C4E5291009D6735 /* CustomColor.swift in Sources */,
+				6250B8F11C4E1B94009D6735 /* ContacListTableViewCell.swift in Sources */,
+				629985231C4F624B0068BB41 /* CouponViewController.swift in Sources */,
+				629985211C4F52AF0068BB41 /* ChooseStoreViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		620A5EFE1C4CA8B9008EB71E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				620A5EFF1C4CA8B9008EB71E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		620A5F0A1C4CA8B9008EB71E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Balak Ram Sharma (9Y3L2SD852)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "fd0c7a61-e458-4e8b-80a3-98262293df61";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		620A5F0B1C4CA8B9008EB71E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Balak Ram Sharma (9Y3L2SD852)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "fd0c7a61-e458-4e8b-80a3-98262293df61";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		620A5F0D1C4CA8B9008EB71E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Balak Ram Sharma (9Y3L2SD852)";
+				INFOPLIST_FILE = TellTenMobile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.TellTenMobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fd0c7a61-e458-4e8b-80a3-98262293df61";
+			};
+			name = Debug;
+		};
+		620A5F0E1C4CA8B9008EB71E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Balak Ram Sharma (9Y3L2SD852)";
+				INFOPLIST_FILE = TellTenMobile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.TellTenMobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fd0c7a61-e458-4e8b-80a3-98262293df61";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		620A5EF21C4CA8B9008EB71E /* Build configuration list for PBXProject "TellTenMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				620A5F0A1C4CA8B9008EB71E /* Debug */,
+				620A5F0B1C4CA8B9008EB71E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		620A5F0C1C4CA8B9008EB71E /* Build configuration list for PBXNativeTarget "TellTenMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				620A5F0D1C4CA8B9008EB71E /* Debug */,
+				620A5F0E1C4CA8B9008EB71E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		620A5F011C4CA8B9008EB71E /* TellTenMobile.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				620A5F021C4CA8B9008EB71E /* TellTenMobile.xcdatamodel */,
+			);
+			currentVersion = 620A5F021C4CA8B9008EB71E /* TellTenMobile.xcdatamodel */;
+			path = TellTenMobile.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 620A5EEF1C4CA8B9008EB71E /* Project object */;
+}
