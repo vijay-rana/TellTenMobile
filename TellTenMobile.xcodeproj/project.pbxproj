@@ -21,6 +21,9 @@
 		6226FE801C51128B00FA70BF /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6226FE7E1C51128B00FA70BF /* Icon-40@3x.png */; };
 		6250B8F11C4E1B94009D6735 /* ContacListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250B8F01C4E1B94009D6735 /* ContacListTableViewCell.swift */; };
 		6250B8F31C4E5291009D6735 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250B8F21C4E5291009D6735 /* CustomColor.swift */; };
+		6288EA4C1C59F8FB00D85AD8 /* CommonObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6288EA4B1C59F8FB00D85AD8 /* CommonObjC.m */; settings = {ASSET_TAGS = (); }; };
+		6288EA4E1C59F93E00D85AD8 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6288EA4D1C59F93E00D85AD8 /* File.swift */; settings = {ASSET_TAGS = (); }; };
+		6288EA501C59FAB900D85AD8 /* StoreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6288EA4F1C59FAB800D85AD8 /* StoreRequest.swift */; settings = {ASSET_TAGS = (); }; };
 		629985211C4F52AF0068BB41 /* ChooseStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629985201C4F52AF0068BB41 /* ChooseStoreViewController.swift */; };
 		629985231C4F624B0068BB41 /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629985221C4F624B0068BB41 /* CouponViewController.swift */; };
 		629CF6C51C50C26200A8F4C1 /* UncheckArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6C31C50C26200A8F4C1 /* UncheckArrow.png */; };
@@ -51,6 +54,10 @@
 		6226FE7E1C51128B00FA70BF /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40@3x.png"; path = "images/icon images/Icon-40@3x.png"; sourceTree = SOURCE_ROOT; };
 		6250B8F01C4E1B94009D6735 /* ContacListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContacListTableViewCell.swift; sourceTree = "<group>"; };
 		6250B8F21C4E5291009D6735 /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		6288EA4A1C59F8FA00D85AD8 /* TellTenMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TellTenMobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		6288EA4B1C59F8FB00D85AD8 /* CommonObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonObjC.m; sourceTree = "<group>"; };
+		6288EA4D1C59F93E00D85AD8 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		6288EA4F1C59FAB800D85AD8 /* StoreRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreRequest.swift; sourceTree = "<group>"; };
 		629985201C4F52AF0068BB41 /* ChooseStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseStoreViewController.swift; sourceTree = "<group>"; };
 		629985221C4F624B0068BB41 /* CouponViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponViewController.swift; sourceTree = "<group>"; };
 		629CF6C31C50C26200A8F4C1 /* UncheckArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UncheckArrow.png; path = images/TickImages/UncheckArrow.png; sourceTree = SOURCE_ROOT; };
@@ -101,6 +108,7 @@
 				629CF6E11C50FD1800A8F4C1 /* Splash Screen */,
 				620A5EFA1C4CA8B9008EB71E /* AppDelegate.swift */,
 				629985201C4F52AF0068BB41 /* ChooseStoreViewController.swift */,
+				6288EA4F1C59FAB800D85AD8 /* StoreRequest.swift */,
 				620A5EFC1C4CA8B9008EB71E /* ContactLisViewController.swift */,
 				6250B8F01C4E1B94009D6735 /* ContacListTableViewCell.swift */,
 				629985221C4F624B0068BB41 /* CouponViewController.swift */,
@@ -111,6 +119,9 @@
 				620A5F091C4CA8B9008EB71E /* Info.plist */,
 				620A5F011C4CA8B9008EB71E /* TellTenMobile.xcdatamodeld */,
 				6226FE721C51075900FA70BF /* images.xcassets */,
+				6288EA4B1C59F8FB00D85AD8 /* CommonObjC.m */,
+				6288EA4A1C59F8FA00D85AD8 /* TellTenMobile-Bridging-Header.h */,
+				6288EA4D1C59F93E00D85AD8 /* File.swift */,
 			);
 			path = TellTenMobile;
 			sourceTree = "<group>";
@@ -175,6 +186,7 @@
 		620A5EEF1C4CA8B9008EB71E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = kbs;
 				TargetAttributes = {
@@ -238,7 +250,10 @@
 				620A5EFB1C4CA8B9008EB71E /* AppDelegate.swift in Sources */,
 				6250B8F31C4E5291009D6735 /* CustomColor.swift in Sources */,
 				6250B8F11C4E1B94009D6735 /* ContacListTableViewCell.swift in Sources */,
+				6288EA501C59FAB900D85AD8 /* StoreRequest.swift in Sources */,
 				629985231C4F624B0068BB41 /* CouponViewController.swift in Sources */,
+				6288EA4C1C59F8FB00D85AD8 /* CommonObjC.m in Sources */,
+				6288EA4E1C59F93E00D85AD8 /* File.swift in Sources */,
 				629985211C4F52AF0068BB41 /* ChooseStoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +364,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Balak Ram Sharma (9Y3L2SD852)";
 				INFOPLIST_FILE = TellTenMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -356,6 +372,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.TellTenMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "fd0c7a61-e458-4e8b-80a3-98262293df61";
+				SWIFT_OBJC_BRIDGING_HEADER = "TellTenMobile/TellTenMobile-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -364,6 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Balak Ram Sharma (9Y3L2SD852)";
 				INFOPLIST_FILE = TellTenMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -371,6 +390,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.TellTenMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "fd0c7a61-e458-4e8b-80a3-98262293df61";
+				SWIFT_OBJC_BRIDGING_HEADER = "TellTenMobile/TellTenMobile-Bridging-Header.h";
 			};
 			name = Release;
 		};

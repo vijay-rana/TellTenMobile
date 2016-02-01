@@ -58,6 +58,7 @@ class CouponViewController: UIViewController {
         self.view.addSubview(customNavigationBartViewobj)
         navBackButton()
         navigationBarLabel ()
+        navSaveButton()
     }
     
     func navigationBarLabel ()
@@ -69,6 +70,7 @@ class CouponViewController: UIViewController {
         customNavigationBartViewobj.addSubview(NavBarLbl)
         
     }
+
     func navBackButton ()
     {
         let navBackBtn = UIButton(frame: CGRectMake(10, customNavigationBartViewobj.frame.height / 2 - 12.5 + 5, 50, 25))
@@ -78,9 +80,30 @@ class CouponViewController: UIViewController {
         customNavigationBartViewobj.addSubview(navBackBtn)
     }
     
+    func navSaveButton ()
+    {
+        let navSaveButton = UIButton(frame: CGRectMake(customNavigationBartViewobj.frame.width - 60, customNavigationBartViewobj.frame.height / 2 - 12.5 + 5, 50, 25))
+        navSaveButton.setTitle("Save", forState: UIControlState.Normal)
+        // navBackBtn.backgroundColor = UIColor.yellowColor()
+        navSaveButton.addTarget(self, action: "screenShotMethod", forControlEvents: UIControlEvents.TouchUpInside)
+        customNavigationBartViewobj.addSubview(navSaveButton)
+    }
+    
     func navBackButtonAction ()
     {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func screenShotMethod() {
+        //Create the UIImage
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        //Save it to the camera roll
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
     
     

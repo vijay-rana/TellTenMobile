@@ -292,6 +292,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 //                }
 //            }
         }
+        //sort array alphabatically---------
+         nameArr.sortUsingSelector("localizedCaseInsensitiveCompare:")
+      
         //add phone book to array -----
         let contactNmaeArr = NSMutableArray()
         contactNmaeArr.addObjectsFromArray([nameArr,phoNumbArr])

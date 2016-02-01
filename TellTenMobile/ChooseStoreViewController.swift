@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ChooseStoreViewController: UIViewController {
+class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     let customNavigationBartViewobj = UIView()
     let storeSubView = UIView()
-    
+    var storeDataArray = NSMutableArray()
+    var containStoreId = 0
+    let telltenLblImgView = UIImageView()
+    var checkButtonstr = NSString()
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
@@ -20,9 +23,13 @@ class ChooseStoreViewController: UIViewController {
 
     
     override func viewDidLoad() {
+       
         super.viewDidLoad()
+       
         self.view.backgroundColor = CustomColor().customColorWithLightGray()
       
+        StoreRequest().requestForStoreDataFromServer()
+        
         // Do any additional setup after loading the view.
         customNavigationBartView()
         //innitializing store subview -------
@@ -99,7 +106,8 @@ class ChooseStoreViewController: UIViewController {
         storeNmaeLabel.backgroundColor = UIColor(red: 240/255, green: 92/255, blue: 89/255, alpha: 1.0)
         selectStoreView.addSubview(storeNmaeLabel)
         
-        let telltenLblImgView = UIImageView(frame: CGRectMake(0, 0, selectStoreView.frame.width, selectStoreView.frame.height - 40))
+        telltenLblImgView.frame = CGRectMake(0, 0, selectStoreView.frame.width, selectStoreView.frame.height - 40)
+        print("image size",telltenLblImgView.frame.size)
         telltenLblImgView.image = UIImage(named: "telten_mobile")
         selectStoreView.addSubview(telltenLblImgView)
         
@@ -167,63 +175,110 @@ class ChooseStoreViewController: UIViewController {
     //list view table
     let selectListTableView = UITableView()
     
+    func tableViewInnitialization ()
+    {
+        selectListTableView.backgroundColor = CustomColor().customColorWithLightGray()
+        selectListTableView.registerClass(ContacListTableViewCell.self, forCellReuseIdentifier: "NameCell")
+        selectListTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        selectListTableView.delegate = self
+        selectListTableView.dataSource = self
+        
+        
+    }
     
     func selectStoreButtonFunction()
     {
-        if(selectConditionBool == true)
-        {
-            self.selectListTableView.frame = CGRectMake(10, self.selectCouponsView.frame.origin.y, self.storeSubView.frame.width - 20, 0)
-            selectListTableView.backgroundColor = UIColor.grayColor()
-            storeSubView.addSubview(selectListTableView)
-           
-            //drop down image animation-------
-            
-            UIView.animateWithDuration(1, animations: {
-            self.arrowImageVIew.transform = CGAffineTransformMakeRotation((180.0 * CGFloat(M_PI)) / 180.0)
-            
-            })
-            
-            //selctlistView animation-----------
-            UIView.animateWithDuration(0.5, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                self.selectListTableView.frame = CGRectMake(10, self.selectListTableView.frame.origin.y, self.selectListTableView.frame.width , self.selectCouponsView.frame.height + self.SelectCouponButton.frame.height)
-                self.selectCouponsView.frame = CGRectMake(self.selectCouponsView.frame.origin.x, self.view.frame.height , self.selectCouponsView.frame.width, self.selectCouponsView.frame.height)
-                self.SelectCouponButton.frame = CGRectMake(10, self.view.frame.height + self.selectCouponsView.frame.origin.y + 5, self.storeSubView.frame.width - 20, 40)
-                
-                
-                }, completion:{ (finish: Bool) in
-                    
-            })
         
-            selectConditionBool = false
+        if(storeDataStruct.structStoreDataArray.count > 0)
+        {
+            print("allstores")
+            
+            
+            checkButtonstr = "selectStoreButtonFunction"
+            
+            tableViewInnitialization()
+            storeDataArray = storeDataStruct.structStoreDataArray
+            print(storeDataArray)
+            if(selectConditionBool == true)
+            {
+                self.selectListTableView.frame = CGRectMake(10, self.selectCouponsView.frame.origin.y, self.storeSubView.frame.width - 20, 0)
+                
+                storeSubView.addSubview(selectListTableView)
+                
+                //drop down image animation-------
+                
+                UIView.animateWithDuration(1, animations: {
+                    self.arrowImageVIew.transform = CGAffineTransformMakeRotation((180.0 * CGFloat(M_PI)) / 180.0)
+                    
+                })
+                
+                //selctlistView animation-----------
+                UIView.animateWithDuration(0.5, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                    self.selectListTableView.frame = CGRectMake(10, self.selectListTableView.frame.origin.y, self.selectListTableView.frame.width , self.selectCouponsView.frame.height + self.SelectCouponButton.frame.height)
+                    self.selectCouponsView.frame = CGRectMake(self.selectCouponsView.frame.origin.x, self.view.frame.height , self.selectCouponsView.frame.width, self.selectCouponsView.frame.height)
+                    self.SelectCouponButton.frame = CGRectMake(10, self.view.frame.height + self.selectCouponsView.frame.origin.y + 5, self.storeSubView.frame.width - 20, 40)
+                    
+                    
+                    }, completion:{ (finish: Bool) in
+                        
+                })
+                
+                selectConditionBool = false
+            }
+            else
+            {
+                
+                //drop down image animation-------
+                
+                UIView.animateWithDuration(1, animations: {
+                    self.arrowImageVIew.transform = CGAffineTransformMakeRotation(0)
+                    
+                })
+                
+                //selctlistView animation-----------
+                
+                
+                UIView.animateWithDuration(0.5, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                    
+                    self.selectListTableView.frame = CGRectMake(10, self.selectListTableView.frame.origin.y, self.storeSubView.frame.width - 20, 0)
+                    
+                    self.selectCouponsView.frame = CGRectMake(10, self.SelectButton.frame.height + self.SelectButton.frame.origin.y + 20, self.storeSubView.frame.width - 20, self.storeSubView.frame.height / 2 - 90)
+                    
+                    self.SelectCouponButton.frame = CGRectMake(10, self.selectCouponsView.frame.height + self.selectCouponsView.frame.origin.y + 5, self.storeSubView.frame.width - 20, 40)
+                    
+                    }, completion:{ (finish: Bool) in
+                        
+                })
+                
+                selectConditionBool = true
+                
+            }
+
+            
         }
         else
         {
-            
-            //drop down image animation-------
-            
-            UIView.animateWithDuration(1, animations: {
-                self.arrowImageVIew.transform = CGAffineTransformMakeRotation(0)
+          
+            let buttonGetting = UILabel(frame: CGRectMake(0, 0, 0, self.SelectButton.frame.height))
+            SelectButton.addSubview(buttonGetting)
+            buttonGetting.textColor = UIColor.blackColor()
+            self.SelectButton.setTitle("", forState: UIControlState.Normal)
+            UIView.animateWithDuration(1.5, animations: {
+                buttonGetting.frame = CGRectMake(0, 0, self.SelectButton.frame.width / 2, self.SelectButton.frame.height)
+                buttonGetting.text = "getting Stores..."
                 
+                }, completion: { (finish:Bool) -> Void in
+                    if(finish)
+                    {
+                        buttonGetting.removeFromSuperview()
+                        self.SelectButton.setTitle("Select", forState: UIControlState.Normal)
+                        
+                    }
             })
             
-            //selctlistView animation-----------
 
-            
-            UIView.animateWithDuration(0.5, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            
-                self.selectListTableView.frame = CGRectMake(10, self.selectListTableView.frame.origin.y, self.storeSubView.frame.width - 20, 0)
-                
-                self.selectCouponsView.frame = CGRectMake(10, self.SelectButton.frame.height + self.SelectButton.frame.origin.y + 20, self.storeSubView.frame.width - 20, self.storeSubView.frame.height / 2 - 90)
-                
-           self.SelectCouponButton.frame = CGRectMake(10, self.selectCouponsView.frame.height + self.selectCouponsView.frame.origin.y + 5, self.storeSubView.frame.width - 20, 40)
-                
-                }, completion:{ (finish: Bool) in
-                    
-            })
-         
-            selectConditionBool = true
-            
         }
+        
         
         
       
@@ -234,73 +289,214 @@ class ChooseStoreViewController: UIViewController {
     func selectCouponButtonFunction()
     {
         
-        
-        if(selectConditionBool == true)
+        if(SelectButton.titleLabel?.text == "Select")
         {
-            selectListTableView.frame = CGRectMake(10, SelectCouponButton.frame.height + SelectCouponButton.frame.origin.y, storeSubView.frame.width - 20, 0)
-            selectListTableView.backgroundColor = UIColor.grayColor()
-            storeSubView.addSubview(selectListTableView)
+            let alert = UIAlertView(title: "TellTenMobile", message: "Please Select Store First", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
             
-            
-            //drop down image animation-------
-            
-            UIView.animateWithDuration(1, animations: {
-                self.couponArrowImageVIew.transform = CGAffineTransformMakeRotation((180.0 * CGFloat(M_PI)) / 180.0)
-                
-            })
-            
-            //selctlistView animation-----------
-            
-            
-            
-            UIView.animateWithDuration(0.5, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                
-                self.selectListTableView.frame = CGRectMake(10, self.selectCouponsView.frame.origin.y, self.storeSubView.frame.width - 20, self.selectCouponsView.frame.height + 40)
-                
-                self.selectCouponsView.frame = self.selectStoreView.frame
-                self.SelectCouponButton.frame = self.SelectButton.frame
-                
-                self.selectStoreView.frame = CGRectMake(self.selectStoreView.frame.origin.x, 0 - self.selectStoreView.frame.height - 90 , self.selectStoreView.frame.width, self.selectStoreView.frame.height)
-                self.SelectButton.frame = CGRectMake(10, 0 - self.SelectButton.frame.height - 80, self.storeSubView.frame.width - 20, 40)
-                
-                
-                }, completion:{ (finish: Bool) in
-                    
-            })
-            selectConditionBool = false
         }
         else
         {
-            //drop down image animation-------
-            UIView.animateWithDuration(1, animations: {
-                self.couponArrowImageVIew.transform = CGAffineTransformMakeRotation(0)
+            if(storeDataStruct.structCouponsDataArray.count > 0)
+            {
                 
-            })
-            
-            UIView.animateWithDuration(0.5, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                checkButtonstr = "selectCouponButtonFunction"
                 
-                self.selectListTableView.frame = CGRectMake(10, self.storeSubView.frame.height - self.SelectCouponButton.frame.height, self.storeSubView.frame.width - 20, 0)
-                self.selectStoreView.frame = CGRectMake(10, 10, self.storeSubView.frame.width - 20, self.storeSubView.frame.height / 2 - 90)
+                selectListTableView.reloadData()
+                storeDataArray = storeDataStruct.structCouponsDataArray
+                print(storeDataArray)
                 
-                self.SelectButton.frame = CGRectMake(10, self.selectStoreView.frame.height + self.selectStoreView.frame.origin.y + 5, self.storeSubView.frame.width - 20, 40)
                 
-                self.selectCouponsView.frame = CGRectMake(10, self.SelectButton.frame.height + self.SelectButton.frame.origin.y + 20, self.storeSubView.frame.width - 20, self.storeSubView.frame.height / 2 - 90)
-                
-                self.SelectCouponButton.frame = CGRectMake(10, self.selectCouponsView.frame.height + self.selectCouponsView.frame.origin.y + 5, self.storeSubView.frame.width - 20, 40)
-
-                
-                }, completion:{ (finish: Bool) in
+                if(selectConditionBool == true)
+                {
+                    selectListTableView.frame = CGRectMake(10, SelectCouponButton.frame.height + SelectCouponButton.frame.origin.y, storeSubView.frame.width - 20, 0)
                     
-            })
+                    storeSubView.addSubview(selectListTableView)
+                    
+                    
+                    //drop down image animation-------
+                    
+                    UIView.animateWithDuration(1, animations: {
+                        self.couponArrowImageVIew.transform = CGAffineTransformMakeRotation((180.0 * CGFloat(M_PI)) / 180.0)
+                        
+                    })
+                    
+                    //selctlistView animation-----------
+                    
+                    
+                    
+                    UIView.animateWithDuration(0.5, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                        
+                        self.selectListTableView.frame = CGRectMake(10, self.selectCouponsView.frame.origin.y, self.storeSubView.frame.width - 20, self.selectCouponsView.frame.height + 40)
+                        
+                        self.selectCouponsView.frame = self.selectStoreView.frame
+                        self.SelectCouponButton.frame = self.SelectButton.frame
+                        
+                        self.selectStoreView.frame = CGRectMake(self.selectStoreView.frame.origin.x, 0 - self.selectStoreView.frame.height - 90 , self.selectStoreView.frame.width, self.selectStoreView.frame.height)
+                        self.SelectButton.frame = CGRectMake(10, 0 - self.SelectButton.frame.height - 80, self.storeSubView.frame.width - 20, 40)
+                        
+                        
+                        }, completion:{ (finish: Bool) in
+                            
+                    })
+                    selectConditionBool = false
+                }
+                else
+                {
+                    //drop down image animation-------
+                    UIView.animateWithDuration(1, animations: {
+                        self.couponArrowImageVIew.transform = CGAffineTransformMakeRotation(0)
+                        
+                    })
+                    
+                    UIView.animateWithDuration(0.5, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                        
+                        self.selectListTableView.frame = CGRectMake(10, self.storeSubView.frame.height - self.SelectCouponButton.frame.height, self.storeSubView.frame.width - 20, 0)
+                        self.selectStoreView.frame = CGRectMake(10, 10, self.storeSubView.frame.width - 20, self.storeSubView.frame.height / 2 - 90)
+                        
+                        self.SelectButton.frame = CGRectMake(10, self.selectStoreView.frame.height + self.selectStoreView.frame.origin.y + 5, self.storeSubView.frame.width - 20, 40)
+                        
+                        self.selectCouponsView.frame = CGRectMake(10, self.SelectButton.frame.height + self.SelectButton.frame.origin.y + 20, self.storeSubView.frame.width - 20, self.storeSubView.frame.height / 2 - 90)
+                        
+                        self.SelectCouponButton.frame = CGRectMake(10, self.selectCouponsView.frame.height + self.selectCouponsView.frame.origin.y + 5, self.storeSubView.frame.width - 20, 40)
+                        
+                        
+                        }, completion:{ (finish: Bool) in
+                            
+                    })
+                    
+                    selectConditionBool = true
+                    
+                }
+                
+            }
+            else
+            {
+                
+                
+                let buttonGetting = UILabel(frame: CGRectMake(0, 0, 0, self.SelectCouponButton.frame.height))
+                SelectCouponButton.addSubview(buttonGetting)
+                buttonGetting.textColor = UIColor.blackColor()
+                self.SelectCouponButton.setTitle("", forState: UIControlState.Normal)
+                UIView.animateWithDuration(1.5, animations: {
+                    buttonGetting.frame = CGRectMake(0, 0, self.SelectCouponButton.frame.width / 2, self.SelectCouponButton.frame.height)
+                    buttonGetting.text = "Getting Coupons..."
+                    
+                    
+                    }, completion: { (finish:Bool) -> Void in
+                        if(finish)
+                        {
+                            buttonGetting.removeFromSuperview()
+                            self.SelectCouponButton.setTitle("Select", forState: UIControlState.Normal)
+                            
+                        }
+                })
+                
+            }
             
-            selectConditionBool = true
+            
+            
+            
+
             
         }
         
         
+    }
+    //MARK: tableView Delegate
+    
+
+    //datasource of tableview---------------
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1;
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("cell",storeDataArray)
+        return storeDataArray.objectAtIndex(0).objectAtIndex(2).count
+    }
+    
+    //delegate of table view--------------
+    var cellImageView = UIImageView()
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let tableViewCells = tableView.dequeueReusableCellWithIdentifier("NameCell", forIndexPath: indexPath) as! ContacListTableViewCell
+        
+        tableViewCells.layer.shadowOffset = CGSize(width: 3, height: 3)
+        tableViewCells.layer.shadowOpacity = 0.3
+        tableViewCells.layer.shadowRadius = 2
+        
+        tableViewCells.selectionStyle = UITableViewCellSelectionStyle.None
+        tableViewCells.backgroundColor = UIColor.clearColor()
+        //creating subview-----
+        tableViewCells.creatingSubviewForCell()
+        tableViewCells.contactImageView()
+        
+        let contactName = storeDataArray.objectAtIndex(0).objectAtIndex(2).objectAtIndex(indexPath.row) as! String
+        tableViewCells.contactNameLabel(contactName)
+        
+        return tableViewCells
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+       
+        if(checkButtonstr.isEqualToString("selectStoreButtonFunction"))
+        {
+             SelectButton.setTitle(storeDataArray.objectAtIndex(0).objectAtIndex(2).objectAtIndex(indexPath.row) as? String, forState: UIControlState.Normal)
+            loadingDataWithUrl(storeDataArray.objectAtIndex(0).objectAtIndex(0).objectAtIndex(indexPath.row) as! String)
+            StoreRequest().requestForCouponFromServer(NSString(format: "%d", indexPath.row))
+              selectStoreButtonFunction()
+             
+        }
+        else if(checkButtonstr.isEqualToString("selectCouponButtonFunction"))
+        {
+            SelectCouponButton.setTitle(storeDataArray.objectAtIndex(0).objectAtIndex(2).objectAtIndex(indexPath.row) as? String, forState: UIControlState.Normal)
+            selectCouponButtonFunction()
+        }
+        
+        
+    }
+   
+    func loadingDataWithUrl (urlString:NSString)
+    {
+        print(urlString)
+        let urlStore = NSURL(string: urlString as String)
+        let urlRequset = NSURLRequest(URL:urlStore!)
+        
+        
+        NSURLConnection.sendAsynchronousRequest(urlRequset, queue: NSOperationQueue.mainQueue()) { (response : NSURLResponse?, data : NSData?, Error : NSError?) -> Void in
+            if (data == nil)
+            {
+                print("nil")
+            }
+            else
+            {
+                print("not nil")
+                 self.telltenLblImgView.image = UIImage(data: data!)
+            }
+       
+            
+        }
+        
+        
+    }
+  
+    //coupons arry---
+    func getCouponsArry()
+    {
+        storeDataArray = storeDataStruct.structCouponsDataArray
+        
+    
         
     }
     
+        
+    //---------------------------------#################################################################################_________________________________
+
     
     
     
@@ -319,7 +515,23 @@ class ChooseStoreViewController: UIViewController {
     // submit Button Action
     func submitButtonAction ()
     {
-        self.navigationController?.pushViewController(ViewController(), animated: true)
+         if(SelectButton.titleLabel?.text == "Select")
+        {
+            let alert = UIAlertView(title: "TellTenMobile", message: "Please Select Store", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+            
+        }
+        else if(SelectCouponButton.titleLabel?.text == "Select")
+        {
+            let alert = UIAlertView(title: "TellTenMobile", message: "Please Select Coupon", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+            
+        }
+        else
+        {
+            self.navigationController?.pushViewController(ViewController(), animated: true)
+        }
+        
     }
     
     
