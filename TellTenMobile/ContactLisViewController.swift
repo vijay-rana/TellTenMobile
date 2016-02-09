@@ -39,8 +39,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     //getting acces from adderss book------------------------##########################----------------
     func promptForAddressBookRequestAccess() {
-        var err: Unmanaged<CFError>? = nil
-        
+    
         ABAddressBookRequestAccessWithCompletion(addressBookRef) {
             (granted: Bool, error: CFError!) in
             dispatch_async(dispatch_get_main_queue()) {
@@ -71,6 +70,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         case .Denied, .Restricted:
             //1
             print("Denied")
+            //if Denied then create a view to display settings---------------
             customNavigationBartView()
             tellTenLabel()
             notAuthorizeAccessContact()
@@ -80,7 +80,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             
             self.addressBookRef = ABAddressBookCreateWithOptions(nil, nil).takeRetainedValue()
             self.contactNmaePhonArray =  self.getAllContactsFromAddresBook()
-            
             customNavigationBartView()
             tellTenLabel()
             intializingContactListTableView()
@@ -340,8 +339,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         if #available(iOS 8.0, *) {
             UIApplication.sharedApplication().openURL((NSURL(string:UIApplicationOpenSettingsURLString)!))
         } else {
-            let alert = UIAlertView(title: "TellTen", message: "Can't open Setting Please upgrade your iOS version", delegate: nil, cancelButtonTitle: "OK")
+            let alert = UIAlertView(title: "TellTen", message: " Settings >> TellTenMobile >> Enable Contact", delegate: nil, cancelButtonTitle: "OK")
             alert.show()
+            
         }
     }
     

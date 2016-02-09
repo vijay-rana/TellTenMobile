@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Photos
 
 class CouponViewController: UIViewController {
 
     let customNavigationBartViewobj = UIView()
     let storeSubView = UIView()
+    var codeSaved = true
+    
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
@@ -80,6 +83,12 @@ class CouponViewController: UIViewController {
         customNavigationBartViewobj.addSubview(navBackBtn)
     }
     
+    func navBackButtonAction ()
+    {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    //save coupon Funtion
     func navSaveButton ()
     {
         let navSaveButton = UIButton(frame: CGRectMake(customNavigationBartViewobj.frame.width - 60, customNavigationBartViewobj.frame.height / 2 - 12.5 + 5, 50, 25))
@@ -89,21 +98,74 @@ class CouponViewController: UIViewController {
         customNavigationBartViewobj.addSubview(navSaveButton)
     }
     
-    func navBackButtonAction ()
-    {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
+ 
     
     func screenShotMethod() {
-        //Create the UIImage
-        UIGraphicsBeginImageContext(view.frame.size)
-        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
         
-        UIGraphicsEndImageContext()
+        if(codeSaved == true)
+        {
+            //Create the UIImage
+            UIGraphicsBeginImageContext(view.frame.size)
+            view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            if #available(iOS 8.0, *) {
+              
+                PHPhotoLibrary.requestAuthorization({ (status:PHAuthorizationStatus) -> Void in
+                    switch status{
+                        case .Authorized:
+                        dispatch_async(dispatch_get_main_queue(), {
+                        print("Authorized")
+                            //Save it to the camera roll
+                            let sceenShotImageView = UIImageView(frame: self.view.frame)
+                            self.view.addSubview(sceenShotImageView)
+                            
+                            
+                            UIView.animateWithDuration(0.7, delay: 0.2, usingSpringWithDamping: 0.5, initialSpringVelocity: 2.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                                sceenShotImageView.frame = CGRectMake(50, 100, sceenShotImageView.frame.width - 100,  sceenShotImageView.frame.height - 200)
+                                sceenShotImageView.image = image
+                                }) { (Finish:Bool) -> Void in
+                                    UIView.animateWithDuration(0.4, delay: 0.8, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                                        sceenShotImageView.removeFromSuperview()
+                                        }) { (Finish:Bool) -> Void in
+                                            let alrt = UIAlertView(title: "TellTenMobile", message: "Save Coupon Successfully.", delegate: nil, cancelButtonTitle: "OK")
+                                            alrt.show()
+                                    }
+                            }
+                            
+                            
+                            self.codeSaved = false
+                        
+                        })
+                        break
+                        case .Denied:
+                        dispatch_async(dispatch_get_main_queue(), {
+                        print("Denied")
+                            let alrt = UIAlertView(title: "TellTenMobile", message: "Can't Save Coupon. Please Authorize Photos to save this Copoun in Settings.", delegate: nil, cancelButtonTitle: "OK")
+                            alrt.show()
+                        })
+                        break
+                        default:
+                        dispatch_async(dispatch_get_main_queue(), {
+                        print("Default")
+                            let alrt = UIAlertView(title: "TellTenMobile", message: "Can't Save Coupon. Something Went Wrong! Please Try Again.", delegate: nil, cancelButtonTitle: "OK")
+                            alrt.show()
+                        })
+                        break
+                    }
+                })
+            } else {
+                // Fallback on earlier versions
+            }
+       
+        }
+        else
+        {
+            let alrt = UIAlertView(title: "TellTenMobile", message: "You Already Saved This Coupon", delegate: nil, cancelButtonTitle: "OK")
+            alrt.show()
+        }
         
-        //Save it to the camera roll
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
     
     

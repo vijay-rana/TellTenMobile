@@ -28,10 +28,13 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
        
         self.view.backgroundColor = CustomColor().customColorWithLightGray()
       
+        //requesting store from server
         StoreRequest().requestForStoreDataFromServer()
         
         // Do any additional setup after loading the view.
+        //customiz navigation bar
         customNavigationBartView()
+       
         //innitializing store subview -------
         storeSubView.frame = CGRectMake(10, customNavigationBartViewobj.frame.height + 10, self.view.frame.width - 20, self.view.frame.height - customNavigationBartViewobj.frame.height - 20)
         storeSubView.layer.shadowOffset = CGSize(width: 3, height: 3)
@@ -40,6 +43,7 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
         storeSubView.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(storeSubView)
         selectStoreViewInnitialization()
+        
         //subit button innitialization
         InntializingSubmitBuuton()
     }
@@ -56,6 +60,7 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
         self.view.addSubview(customNavigationBartViewobj)
         navBackButton()
         navigationBarLabel ()
+       // navSaveButton()
     }
     
     func navigationBarLabel ()
@@ -80,6 +85,35 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
     {
         self.navigationController?.popViewControllerAnimated(true)
     }
+    
+    func navSaveButton ()
+    {
+        let navSaveButton = UIButton(frame: CGRectMake(customNavigationBartViewobj.frame.width - 90, customNavigationBartViewobj.frame.height / 2 - 12.5 + 5, 80, 25))
+        navSaveButton.setTitle("Coupons", forState: UIControlState.Normal)
+        // navBackBtn.backgroundColor = UIColor.yellowColor()
+        navSaveButton.addTarget(self, action: "navSavedCouponsAction", forControlEvents: UIControlEvents.TouchUpInside)
+        customNavigationBartViewobj.addSubview(navSaveButton)
+    }
+    
+    func navSavedCouponsAction ()
+    {
+        let imageData = NSUserDefaults.standardUserDefaults().valueForKey("CouponImage") as? NSData
+        
+        if(imageData != nil)
+        {
+            self.navigationController?.pushViewController(ShowCouponsViewController(), animated: true)
+        }
+        else
+        {
+          let alert = UIAlertView(title: "TellTenMobile", message: "There is no Coupon Saved", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+            
+        }
+        
+        
+        
+    }
+    
 //-------------------------------################################################----------------------------------------------
 
     //MARK:select Store view Functions
@@ -182,8 +216,7 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
         selectListTableView.separatorStyle = UITableViewCellSeparatorStyle.None
         selectListTableView.delegate = self
         selectListTableView.dataSource = self
-        
-        
+      
     }
     
     func selectStoreButtonFunction()
@@ -297,13 +330,12 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
         }
         else
         {
-            if(storeDataStruct.structCouponsDataArray.count > 0)
+            if(storeDataArray.objectAtIndex(0).objectAtIndex(2).count > 0)
             {
                 
                 checkButtonstr = "selectCouponButtonFunction"
-                
-                selectListTableView.reloadData()
                 storeDataArray = storeDataStruct.structCouponsDataArray
+                selectListTableView.reloadData()
                 print(storeDataArray)
                 
                 
@@ -412,7 +444,7 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
         return 1;
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("cell",storeDataArray)
+        print("cell",storeDataArray.objectAtIndex(0).objectAtIndex(2))
         return storeDataArray.objectAtIndex(0).objectAtIndex(2).count
     }
     
@@ -489,7 +521,7 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
     func getCouponsArry()
     {
         storeDataArray = storeDataStruct.structCouponsDataArray
-        
+        print("coupon array",storeDataArray.objectAtIndex(0).objectAtIndex(2))
     
         
     }
