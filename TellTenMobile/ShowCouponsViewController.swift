@@ -29,7 +29,6 @@ class ShowCouponsViewController: UIViewController {
             
             self.view.addSubview(showCouponsImageView)
 
-            
         }
      
         
@@ -47,7 +46,7 @@ class ShowCouponsViewController: UIViewController {
         self.view.addSubview(customNavigationBartViewobj)
         navBackButton()
         navigationBarLabel ()
-       
+
     }
     
     func navigationBarLabel ()

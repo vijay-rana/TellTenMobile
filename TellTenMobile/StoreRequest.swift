@@ -42,8 +42,8 @@ class StoreRequest: NSObject,NSURLConnectionDataDelegate {
             do {
                 let dictData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
               
-               // print("data",dictData)
-              //  print("Stores",dictData.valueForKey("stores"))
+                // print("data",dictData)
+                //print("Stores",dictData.valueForKey("stores"))
                 let storesArray = dictData.valueForKey("stores") as? NSArray
                 //print(storesArray)
                 let imgArray = NSMutableArray()
@@ -55,12 +55,11 @@ class StoreRequest: NSObject,NSURLConnectionDataDelegate {
                     imgArray.addObject((storeNameDict?.valueForKey("imageURL"))!)
                     storeIDArray.addObject((storeNameDict?.valueForKey("storeID"))!)
                     storeNameArray.addObject((storeNameDict?.valueForKey("storeName"))!)
-                    
-                    
                 }
                 
                 let storeDataArray = NSMutableArray()
                 storeDataArray.addObject([imgArray,storeIDArray,storeNameArray])
+                print("dict stors",storeDataArray)
                 storeDataStruct.structStoreDataArray = storeDataArray
                 // use anyObj here
             } catch {
@@ -111,7 +110,7 @@ class StoreRequest: NSObject,NSURLConnectionDataDelegate {
                 let storeDataArray = NSMutableArray()
                 storeDataArray.addObject([imgArray,storeIDArray,storeNameArray])
                  storeDataStruct.structCouponsDataArray = storeDataArray
-                print("Coupon data",storeDataStruct.structStoreDataArray)
+               
                 ChooseStoreViewController().getCouponsArry()
               
             } catch {

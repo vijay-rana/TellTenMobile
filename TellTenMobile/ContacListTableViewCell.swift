@@ -21,8 +21,6 @@ class ContacListTableViewCell: UITableViewCell {
      
     }
     
-
-   
     
     func creatingSubviewForCell()
     {

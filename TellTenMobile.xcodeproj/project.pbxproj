@@ -13,18 +13,19 @@
 		620A5F031C4CA8B9008EB71E /* TellTenMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 620A5F011C4CA8B9008EB71E /* TellTenMobile.xcdatamodeld */; };
 		620A5F051C4CA8B9008EB71E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 620A5F041C4CA8B9008EB71E /* Assets.xcassets */; };
 		620A5F101C4CAD62008EB71E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620A5F0F1C4CAD62008EB71E /* AddressBook.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		621E5C3A1C5F8BB700F6E686 /* ShowCouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621E5C391C5F8BB700F6E686 /* ShowCouponsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		621E5C3A1C5F8BB700F6E686 /* ShowCouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621E5C391C5F8BB700F6E686 /* ShowCouponsViewController.swift */; };
 		6226FE711C5103B800FA70BF /* telten_mobile.png in Resources */ = {isa = PBXBuildFile; fileRef = 6226FE701C5103B800FA70BF /* telten_mobile.png */; };
 		6226FE731C51075900FA70BF /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6226FE721C51075900FA70BF /* images.xcassets */; };
 		6226FE781C51119500FA70BF /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6226FE741C51119500FA70BF /* Icon-60@2x.png */; };
 		6226FE791C51119500FA70BF /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6226FE751C51119500FA70BF /* Icon-60@3x.png */; };
 		6226FE7F1C51128B00FA70BF /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6226FE7D1C51128B00FA70BF /* Icon-40@2x.png */; };
 		6226FE801C51128B00FA70BF /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6226FE7E1C51128B00FA70BF /* Icon-40@3x.png */; };
+		6239A68B1C6B150A00B86107 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6239A68A1C6B150900B86107 /* LoaderView.swift */; };
 		6250B8F11C4E1B94009D6735 /* ContacListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250B8F01C4E1B94009D6735 /* ContacListTableViewCell.swift */; };
 		6250B8F31C4E5291009D6735 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250B8F21C4E5291009D6735 /* CustomColor.swift */; };
-		6288EA4C1C59F8FB00D85AD8 /* CommonObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6288EA4B1C59F8FB00D85AD8 /* CommonObjC.m */; settings = {ASSET_TAGS = (); }; };
-		6288EA4E1C59F93E00D85AD8 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6288EA4D1C59F93E00D85AD8 /* File.swift */; settings = {ASSET_TAGS = (); }; };
-		6288EA501C59FAB900D85AD8 /* StoreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6288EA4F1C59FAB800D85AD8 /* StoreRequest.swift */; settings = {ASSET_TAGS = (); }; };
+		6288EA4C1C59F8FB00D85AD8 /* CommonObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6288EA4B1C59F8FB00D85AD8 /* CommonObjC.m */; };
+		6288EA4E1C59F93E00D85AD8 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6288EA4D1C59F93E00D85AD8 /* File.swift */; };
+		6288EA501C59FAB900D85AD8 /* StoreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6288EA4F1C59FAB800D85AD8 /* StoreRequest.swift */; };
 		629985211C4F52AF0068BB41 /* ChooseStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629985201C4F52AF0068BB41 /* ChooseStoreViewController.swift */; };
 		629985231C4F624B0068BB41 /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629985221C4F624B0068BB41 /* CouponViewController.swift */; };
 		629CF6C51C50C26200A8F4C1 /* UncheckArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6C31C50C26200A8F4C1 /* UncheckArrow.png */; };
@@ -54,6 +55,7 @@
 		6226FE751C51119500FA70BF /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@3x.png"; path = "images/icon images/Icon-60@3x.png"; sourceTree = SOURCE_ROOT; };
 		6226FE7D1C51128B00FA70BF /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40@2x.png"; path = "images/icon images/Icon-40@2x.png"; sourceTree = SOURCE_ROOT; };
 		6226FE7E1C51128B00FA70BF /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40@3x.png"; path = "images/icon images/Icon-40@3x.png"; sourceTree = SOURCE_ROOT; };
+		6239A68A1C6B150900B86107 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		6250B8F01C4E1B94009D6735 /* ContacListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContacListTableViewCell.swift; sourceTree = "<group>"; };
 		6250B8F21C4E5291009D6735 /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		6288EA4A1C59F8FA00D85AD8 /* TellTenMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TellTenMobile-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				6250B8F01C4E1B94009D6735 /* ContacListTableViewCell.swift */,
 				629985221C4F624B0068BB41 /* CouponViewController.swift */,
 				6250B8F21C4E5291009D6735 /* CustomColor.swift */,
+				6239A68A1C6B150900B86107 /* LoaderView.swift */,
 				629CF6C71C50C26900A8F4C1 /* checkImages */,
 				620A5EFE1C4CA8B9008EB71E /* Main.storyboard */,
 				620A5F041C4CA8B9008EB71E /* Assets.xcassets */,
@@ -253,6 +256,7 @@
 				620A5EFB1C4CA8B9008EB71E /* AppDelegate.swift in Sources */,
 				621E5C3A1C5F8BB700F6E686 /* ShowCouponsViewController.swift in Sources */,
 				6250B8F31C4E5291009D6735 /* CustomColor.swift in Sources */,
+				6239A68B1C6B150A00B86107 /* LoaderView.swift in Sources */,
 				6250B8F11C4E1B94009D6735 /* ContacListTableViewCell.swift in Sources */,
 				6288EA501C59FAB900D85AD8 /* StoreRequest.swift in Sources */,
 				629985231C4F624B0068BB41 /* CouponViewController.swift in Sources */,
@@ -375,7 +379,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.TellTenMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c99858a7-df8e-4e7e-a81c-f2b68ab4cf38";
+				PROVISIONING_PROFILE = "fd0c7a61-e458-4e8b-80a3-98262293df61";
 				SWIFT_OBJC_BRIDGING_HEADER = "TellTenMobile/TellTenMobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -393,7 +397,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.TellTenMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c99858a7-df8e-4e7e-a81c-f2b68ab4cf38";
+				PROVISIONING_PROFILE = "fd0c7a61-e458-4e8b-80a3-98262293df61";
 				SWIFT_OBJC_BRIDGING_HEADER = "TellTenMobile/TellTenMobile-Bridging-Header.h";
 			};
 			name = Release;
