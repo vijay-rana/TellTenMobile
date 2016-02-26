@@ -15,7 +15,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
    var addressBookRef : ABAddressBook!
 
     
-
+    var contactNmaePhonDic = NSMutableDictionary()
     var contactNmaePhonArray = NSMutableArray()
     
     let contactListTableView = UITableView()
@@ -231,8 +231,39 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     {
         print(rowIndexNumberarr)
        // self.navigationController?.pushViewController(CouponViewController(), animated: true)
+        
+        
         if(rowIndexNumberarr.count > 9)
         {
+            
+//       {
+//           “numberList”:[
+//                              {“name”: “contactName1”, “phoneNumber”: “8135930201”},
+//                              {“name”: “contactName2”, “phoneNumber”: “8135930202”}
+//                        ]
+//        }
+            var NumberJSON:String =  "{\"numberList\":["
+            for count in rowIndexNumberarr {
+                
+                
+                //contactNmaePhonArray.objectAtIndex(0).objectAtIndex(Int(count as! NSNumber))
+                //contactNmaePhonArray.objectAtIndex(1).objectAtIndex(Int(count as! NSNumber))
+               // print(String(contactNmaePhonArray.objectAtIndex(0).objectAtIndex(Int(count as! NSNumber)))
+               // print(String(contactNmaePhonArray.objectAtIndex(1).objectAtIndex(Int(count as! NSNumber)))
+                
+                NumberJSON = NumberJSON + "{\"name\": \"" + String(contactNmaePhonArray.objectAtIndex(0).objectAtIndex(Int(count as! NSNumber))) + "\","
+                NumberJSON = NumberJSON +  "phoneNumber\": \""  + String(contactNmaePhonDic[String(contactNmaePhonArray.objectAtIndex(0).objectAtIndex(Int(count as! NSNumber)))]!) + "\"},"
+                
+            }
+            
+            NumberJSON = String(NumberJSON.characters.dropLast())
+            NumberJSON =  NumberJSON + "]}"
+            
+            
+            print(NumberJSON)
+            
+            
+            
             self.navigationController?.pushViewController(CouponViewController(), animated: true)
         }
         else
@@ -260,37 +291,50 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         {
             let contactPerson: ABRecordRef = record
 //
-            if let firstName: NSString = ABRecordCopyValue(contactPerson, kABPersonFirstNameProperty)?.takeRetainedValue() as? NSString  {
-             nameArr.addObject(firstName)
-            }
+      
 
             
            
             //let lastName: String? = ABRecordCopyValue(contactPerson, kABPersonLastNameProperty).takeRetainedValue()as NSString as String
            
          
-//fetch all phone number from contact list ------
-//            let phonesRef: ABMultiValueRef = ABRecordCopyValue(contactPerson, kABPersonPhoneProperty).takeRetainedValue() as ABMultiValueRef
-//           // var phonesArray  = Array<Dictionary<String,String>>()
-//            for var i:Int = 0; i < ABMultiValueGetCount(phonesRef); i++ {
-//                let label: NSString = ABMultiValueCopyLabelAtIndex(phonesRef, i).takeRetainedValue() as NSString
-//                let value: String = ABMultiValueCopyValueAtIndex(phonesRef, i).takeRetainedValue() as! NSString as String
-//                
-//                
-//                
-//                if #available(iOS 8.0, *) {
+            //fetch all phone number from contact list ------
+            let phonesRef: ABMultiValueRef = ABRecordCopyValue(contactPerson, kABPersonPhoneProperty).takeRetainedValue() as ABMultiValueRef
+           // var phonesArray  = Array<Dictionary<String,String>>()
+            for var i:Int = 0; i < ABMultiValueGetCount(phonesRef); i++ {
+                let label: NSString = ABMultiValueCopyLabelAtIndex(phonesRef, i).takeRetainedValue() as NSString
+                let value: NSString = ABMultiValueCopyValueAtIndex(phonesRef, i).takeRetainedValue() as! NSString
+                
+                
+                if #available(iOS 8.0, *) {
+                    
+                    if(label.length > 0 && value.length > 0)
+                    {
+                        phoNumbArr.addObject(value)
+                        if let firstName: NSString = ABRecordCopyValue(contactPerson, kABPersonFirstNameProperty)?.takeRetainedValue() as? NSString  {
+                            contactNmaePhonDic[firstName] = value
+                            nameArr.addObject(firstName)
+                        }
+                        break
+                    }
+                    
 //                    if(label.containsString("Mobile") == true)
 //                    {
 //                        // print(firstName,"==>",value)
 //                        phoNumbArr.addObject(value)
 //                    }
-//                } else {
-//                    // Fallback on earlier versions
-//                    
-//                     phoNumbArr.addObject(value)
-//                }
-//            }
+                  
+                } else {
+                    // Fallback on earlier versions
+                    
+                     phoNumbArr.addObject(value)
+                }
+            }
         }
+        
+        
+        print(phoNumbArr)
+        
         //sort array alphabatically---------
          nameArr.sortUsingSelector("localizedCaseInsensitiveCompare:")
       
