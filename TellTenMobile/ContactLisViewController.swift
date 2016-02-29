@@ -232,11 +232,25 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         print(rowIndexNumberarr)
        // self.navigationController?.pushViewController(CouponViewController(), animated: true)
         
-        
         if(rowIndexNumberarr.count > 9)
         {
+            let ActivityLoaderView = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width / 2 - 37.5, self.view.frame.size.height / 2 - 37.5, 75, 75 ))
             
+            ActivityLoaderView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
+            ActivityLoaderView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
+            ActivityLoaderView.layer.cornerRadius = 10.0
+            ActivityLoaderView.startAnimating()
+            self.view.addSubview(ActivityLoaderView)
+            
+            UIView.animateWithDuration(0.6, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 2.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                
+                ActivityLoaderView.frame = CGRectMake(self.view.frame.size.width / 2 - 50, self.view.frame.size.height / 2 - 50, 100, 100)
+                
+                }) { (Bool) -> Void in
+                    
+            }
 
+            
             var NumberJSON:String =  "{\"numberList\":["
             for count in rowIndexNumberarr {
                 
@@ -249,21 +263,34 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             NumberJSON =  NumberJSON + "]}"
             
             //getting data from server
-            StoreRequest().requestNetwork("http://www.telltenmobile.com/web/ws/contactHandler.php",httpBody: NumberJSON, completions: { (result) -> Void in
+         
+             StoreRequest().requestNetwork("http://www.telltenmobile.com/web/ws/contactHandler.php", httpBody: NumberJSON, completions: { (result) -> Void in
+                
                 if(result.count != 0)
                 {
-                    print(result)
-                    print(NumberJSON)
-                    self.navigationController?.pushViewController(CouponViewController(), animated: true)
-
+                    ActivityLoaderView.stopAnimating()
+                    ActivityLoaderView.removeFromSuperview()
+                    print("this is a =>",result)
+                    storeDataStruct.couponCode = result.valueForKey("coupons") as! NSString
+                    
+                    dispatch_async(dispatch_get_main_queue()) { // 2
+                        self.navigationController?.pushViewController(CouponViewController(), animated: true)// 3
+                    }
+                    // self.navigationController?.pushViewController(CouponViewController(), animated: true)
                     
                 }
-            })
+                
+                }, failure: { (errorMassege) -> Void in
+                     ActivityLoaderView.stopAnimating()
+                    ActivityLoaderView.removeFromSuperview()
+             })
+            
         }
         else
         {
             let alertView = UIAlertView(title: "Tell Ten ", message: "Please select atleast ten Contacts", delegate: nil, cancelButtonTitle: "Ok")
                 alertView.show()
+            
         }
         
     }

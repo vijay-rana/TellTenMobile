@@ -13,6 +13,7 @@
 		620A5F031C4CA8B9008EB71E /* TellTenMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 620A5F011C4CA8B9008EB71E /* TellTenMobile.xcdatamodeld */; };
 		620A5F051C4CA8B9008EB71E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 620A5F041C4CA8B9008EB71E /* Assets.xcassets */; };
 		620A5F101C4CAD62008EB71E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620A5F0F1C4CAD62008EB71E /* AddressBook.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		620F441C1C844A0400069342 /* ActivityLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620F441B1C844A0400069342 /* ActivityLoaderView.swift */; };
 		621E5C3A1C5F8BB700F6E686 /* ShowCouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621E5C391C5F8BB700F6E686 /* ShowCouponsViewController.swift */; };
 		6226FE711C5103B800FA70BF /* telten_mobile.png in Resources */ = {isa = PBXBuildFile; fileRef = 6226FE701C5103B800FA70BF /* telten_mobile.png */; };
 		6226FE731C51075900FA70BF /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6226FE721C51075900FA70BF /* images.xcassets */; };
@@ -48,6 +49,7 @@
 		620A5F041C4CA8B9008EB71E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		620A5F091C4CA8B9008EB71E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		620A5F0F1C4CAD62008EB71E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		620F441B1C844A0400069342 /* ActivityLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityLoaderView.swift; sourceTree = "<group>"; };
 		621E5C391C5F8BB700F6E686 /* ShowCouponsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowCouponsViewController.swift; sourceTree = "<group>"; };
 		6226FE701C5103B800FA70BF /* telten_mobile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = telten_mobile.png; path = images/telten_mobile.png; sourceTree = SOURCE_ROOT; };
 		6226FE721C51075900FA70BF /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				620A5EFC1C4CA8B9008EB71E /* ContactLisViewController.swift */,
 				6250B8F01C4E1B94009D6735 /* ContacListTableViewCell.swift */,
 				629985221C4F624B0068BB41 /* CouponViewController.swift */,
+				620F441B1C844A0400069342 /* ActivityLoaderView.swift */,
 				6250B8F21C4E5291009D6735 /* CustomColor.swift */,
 				6239A68A1C6B150900B86107 /* LoaderView.swift */,
 				629CF6C71C50C26900A8F4C1 /* checkImages */,
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				620A5EFD1C4CA8B9008EB71E /* ContactLisViewController.swift in Sources */,
+				620F441C1C844A0400069342 /* ActivityLoaderView.swift in Sources */,
 				620A5F031C4CA8B9008EB71E /* TellTenMobile.xcdatamodeld in Sources */,
 				620A5EFB1C4CA8B9008EB71E /* AppDelegate.swift in Sources */,
 				621E5C3A1C5F8BB700F6E686 /* ShowCouponsViewController.swift in Sources */,

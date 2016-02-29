@@ -16,6 +16,7 @@ class CouponViewController: UIViewController {
     var codeSaved = true
     
     
+    
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
@@ -202,7 +203,7 @@ class CouponViewController: UIViewController {
         
         let couponCodeLbl = UILabel(frame: CGRectMake(0, couponImageView.frame.height / 4, couponImageView.frame.width, couponImageView.frame.height / 2))
         couponCodeLbl.textColor =  UIColor.blackColor()
-        couponCodeLbl.text = "AJY!@*#"
+        couponCodeLbl.text = storeDataStruct.couponCode as String
         couponCodeLbl.font = UIFont.systemFontOfSize(18.0)
         couponCodeLbl.textAlignment = NSTextAlignment.Center
         couponImageView.addSubview(couponCodeLbl)

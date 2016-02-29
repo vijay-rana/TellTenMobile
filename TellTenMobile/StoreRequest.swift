@@ -135,14 +135,9 @@ class StoreRequest: NSObject,NSURLConnectionDataDelegate {
     //creating block function---------------
     
    
-    func requestNetwork(urlStringGet:NSString,httpBody: NSString, completions: (result : NSDictionary) -> Void)
+    func requestNetwork(urlStringGet:NSString,httpBody: NSString, completions: (result : NSDictionary) -> Void , failure: (errorMassege : NSString) -> Void)
     {
-       // www.telltenmobile.com/web/ws/contactHandler.php
-
-        
-        
-       
-        
+      
         let urlString = (urlStringGet as String) //+ "?s=" + (cryptoString() as String)
         print("this url",urlString)
         
@@ -152,8 +147,50 @@ class StoreRequest: NSObject,NSURLConnectionDataDelegate {
         let httpBodyCoupon : NSString = "&s=" + (cryptoString() as String) + "&numberlist=" + (httpBody as String)  +  "&couponID=" + (storeDataStruct.couponId as String)
         print(httpBodyCoupon)
         
-         PostDataAsyc(urlStringGet as String, data:httpBodyCoupon as String)
+        // PostDataAsyc(urlStringGet as String, data:httpBodyCoupon as String)
         
+        
+        let postString = httpBodyCoupon as String
+        urlRequset.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        
+        
+        
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(urlRequset) {
+            responseData, response, error in
+            
+            
+            
+            if error != nil {
+                
+                return
+            }
+            
+            do {
+                if(responseData != nil)
+                {
+                    let dictData = try NSJSONSerialization.JSONObjectWithData(responseData!, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
+                  //  print(dictData)
+                    completions(result: dictData)
+                    
+                }
+                
+                
+            }
+            catch {
+                print("json error: \(error)")
+                let alert = UIAlertView(title: "TellTenMobile", message:"json error: \(error)", delegate: nil, cancelButtonTitle: "Ok")
+                alert.show()
+                
+                failure(errorMassege: "json error: \(error)")
+                
+            }
+            
+            
+        }
+        task.resume()
+
         
         
     }
@@ -168,9 +205,9 @@ func PostDataAsyc(query:String, data:String)
     
    
             var GlobalURL: String =  query
-            
+    
             //println(GlobalURL)
-            
+    
             let request = NSMutableURLRequest(URL: NSURL(string: GlobalURL)!)
             request.HTTPMethod = "POST"
             let postString = data
@@ -224,6 +261,8 @@ struct storeDataStruct {
     static var structStoreDataArray = NSMutableArray()
     static var structCouponsDataArray = NSMutableArray()
     static var couponId = NSString()
+    static var couponCode = NSString()
+    
 }
 
 
