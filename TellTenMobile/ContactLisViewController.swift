@@ -236,20 +236,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         if(rowIndexNumberarr.count > 9)
         {
             
-//       {
-//           “numberList”:[
-//                              {“name”: “contactName1”, “phoneNumber”: “8135930201”},
-//                              {“name”: “contactName2”, “phoneNumber”: “8135930202”}
-//                        ]
-//        }
+
             var NumberJSON:String =  "{\"numberList\":["
             for count in rowIndexNumberarr {
-                
-                
-                //contactNmaePhonArray.objectAtIndex(0).objectAtIndex(Int(count as! NSNumber))
-                //contactNmaePhonArray.objectAtIndex(1).objectAtIndex(Int(count as! NSNumber))
-               // print(String(contactNmaePhonArray.objectAtIndex(0).objectAtIndex(Int(count as! NSNumber)))
-               // print(String(contactNmaePhonArray.objectAtIndex(1).objectAtIndex(Int(count as! NSNumber)))
                 
                 NumberJSON = NumberJSON + "{\"name\": \"" + String(contactNmaePhonArray.objectAtIndex(0).objectAtIndex(Int(count as! NSNumber))) + "\","
                 NumberJSON = NumberJSON +  "phoneNumber\": \""  + String(contactNmaePhonDic[String(contactNmaePhonArray.objectAtIndex(0).objectAtIndex(Int(count as! NSNumber)))]!) + "\"},"
@@ -259,12 +248,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             NumberJSON = String(NumberJSON.characters.dropLast())
             NumberJSON =  NumberJSON + "]}"
             
-            
-            print(NumberJSON)
-            
-            
-            
-            self.navigationController?.pushViewController(CouponViewController(), animated: true)
+            //getting data from server
+            StoreRequest().requestNetwork("http://www.telltenmobile.com/web/ws/contactHandler.php",httpBody: NumberJSON, completions: { (result) -> Void in
+                if(result.count != 0)
+                {
+                    print(result)
+                    print(NumberJSON)
+                    self.navigationController?.pushViewController(CouponViewController(), animated: true)
+
+                    
+                }
+            })
         }
         else
         {
@@ -290,14 +284,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         for record:ABRecordRef in allContacts
         {
             let contactPerson: ABRecordRef = record
-//
-      
 
-            
-           
             //let lastName: String? = ABRecordCopyValue(contactPerson, kABPersonLastNameProperty).takeRetainedValue()as NSString as String
-           
-         
+            
             //fetch all phone number from contact list ------
             let phonesRef: ABMultiValueRef = ABRecordCopyValue(contactPerson, kABPersonPhoneProperty).takeRetainedValue() as ABMultiValueRef
            // var phonesArray  = Array<Dictionary<String,String>>()

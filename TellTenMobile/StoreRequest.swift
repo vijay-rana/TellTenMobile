@@ -28,6 +28,9 @@ class StoreRequest: NSObject,NSURLConnectionDataDelegate {
         
     }
     
+    
+    //-----------------------cryptoString--------------end
+    
     func requestForStoreDataFromServer()
     {
         let urlString = "http://www.telltenmobile.com/web/ws/storelist.php?s=" + (cryptoString() as String)
@@ -72,7 +75,8 @@ class StoreRequest: NSObject,NSURLConnectionDataDelegate {
             
         }
         
-    }  
+    }
+    //---------------------------requestForStoreDataFromServer----------- end------------
   
     func requestForCouponFromServer(stroreID:NSString)
     {
@@ -125,12 +129,67 @@ class StoreRequest: NSObject,NSURLConnectionDataDelegate {
 
         
     }
+    
+//---------------------------requestForCouponFromServer----------- end------------
+    
+    //creating block function---------------
+    
+   
+    func requestNetwork(urlStringGet:NSString,httpBody: NSString, completions: (result : NSDictionary) -> Void)
+    {
+       // www.telltenmobile.com/web/ws/contactHandler.php
+
+        let urlString = (urlStringGet as String) + "?s=" + (cryptoString() as String)
+        print("this url",urlString)
+        
+        let urlStore = NSURL(string: urlString)
+        let urlRequset = NSMutableURLRequest(URL:urlStore!)
+        urlRequset.HTTPMethod = "POST"
+//        urlRequset.addValue("s=", forHTTPHeaderField: (cryptoString() as String))
+//         urlRequset.addValue("numberlist=", forHTTPHeaderField: (httpBody as String))
+//        urlRequset.addValue("couponID=", forHTTPHeaderField: (storeDataStruct.couponId as String))
+        let httpBodyCoupon : NSString = "s=" + (cryptoString() as String) + "," + "numberlist" + (httpBody as String)  +  "," + "couponID=" + (storeDataStruct.couponId as String)
+      print(httpBodyCoupon)
+        urlRequset.HTTPBody = httpBody.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        
+        NSURLConnection.sendAsynchronousRequest(urlRequset, queue: NSOperationQueue.mainQueue()) { (response : NSURLResponse?, data : NSData?, Error : NSError?) -> Void in
+            
+            print("this response==>",response,data,Error)
+            
+            do {
+                if(data != nil)
+                {
+                     let dictData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+                    print(dictData)
+                }
+               
+
+            } catch {
+                print("json error: \(error)")
+                let alert = UIAlertView(title: "TellTenMobile", message:"json error: \(error)", delegate: nil, cancelButtonTitle: "Ok")
+                alert.show()
+                
+            }
+            
+            
+        }
+
+        
+        
+    }
+    
 }
+
+
+
+
 
 
 struct storeDataStruct {
     static var structStoreDataArray = NSMutableArray()
     static var structCouponsDataArray = NSMutableArray()
+    static var couponId = NSString()
 }
 
 

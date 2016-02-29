@@ -48,6 +48,8 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
         
         //subit button innitialization
         InntializingSubmitBuuton()
+      
+        
     }
     
     //MARK:custom NavigationBar
@@ -501,6 +503,8 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
         else if(checkButtonstr.isEqualToString("selectCouponButtonFunction"))
         {
             SelectCouponButton.setTitle(storeDataArray.objectAtIndex(0).objectAtIndex(2).objectAtIndex(indexPath.row) as? String, forState: UIControlState.Normal)
+            storeDataStruct.couponId = (storeDataArray.objectAtIndex(0).objectAtIndex(1).objectAtIndex(indexPath.row) as? NSString)!
+            print(storeDataStruct.couponId)
             selectCouponButtonFunction()
         }
         
