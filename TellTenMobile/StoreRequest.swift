@@ -139,47 +139,81 @@ class StoreRequest: NSObject,NSURLConnectionDataDelegate {
     {
        // www.telltenmobile.com/web/ws/contactHandler.php
 
-        let urlString = (urlStringGet as String) + "?s=" + (cryptoString() as String)
+        
+        
+       
+        
+        let urlString = (urlStringGet as String) //+ "?s=" + (cryptoString() as String)
         print("this url",urlString)
         
         let urlStore = NSURL(string: urlString)
         let urlRequset = NSMutableURLRequest(URL:urlStore!)
         urlRequset.HTTPMethod = "POST"
-//        urlRequset.addValue("s=", forHTTPHeaderField: (cryptoString() as String))
-//         urlRequset.addValue("numberlist=", forHTTPHeaderField: (httpBody as String))
-//        urlRequset.addValue("couponID=", forHTTPHeaderField: (storeDataStruct.couponId as String))
-        let httpBodyCoupon : NSString = "s=" + (cryptoString() as String) + "," + "numberlist" + (httpBody as String)  +  "," + "couponID=" + (storeDataStruct.couponId as String)
-      print(httpBodyCoupon)
-        urlRequset.HTTPBody = httpBody.dataUsingEncoding(NSUTF8StringEncoding)
+        let httpBodyCoupon : NSString = "&s=" + (cryptoString() as String) + "&numberlist=" + (httpBody as String)  +  "&couponID=" + (storeDataStruct.couponId as String)
+        print(httpBodyCoupon)
         
+         PostDataAsyc(urlStringGet as String, data:httpBodyCoupon as String)
         
-        NSURLConnection.sendAsynchronousRequest(urlRequset, queue: NSOperationQueue.mainQueue()) { (response : NSURLResponse?, data : NSData?, Error : NSError?) -> Void in
-            
-            print("this response==>",response,data,Error)
-            
-            do {
-                if(data != nil)
-                {
-                     let dictData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
-                    print(dictData)
-                }
-               
-
-            } catch {
-                print("json error: \(error)")
-                let alert = UIAlertView(title: "TellTenMobile", message:"json error: \(error)", delegate: nil, cancelButtonTitle: "Ok")
-                alert.show()
-                
-            }
-            
-            
-        }
-
         
         
     }
     
 }
+
+
+
+func PostDataAsyc(query:String, data:String)
+{
+    
+    
+   
+            var GlobalURL: String =  query
+            
+            //println(GlobalURL)
+            
+            let request = NSMutableURLRequest(URL: NSURL(string: GlobalURL)!)
+            request.HTTPMethod = "POST"
+            let postString = data
+            request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+            
+            
+            
+            
+            
+            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+                responseData, response, error in
+                
+                
+                
+                if error != nil {
+                   
+                    return
+                }
+                
+                do {
+                                    if(responseData != nil)
+                                    {
+                                         let dictData = try NSJSONSerialization.JSONObjectWithData(responseData!, options: NSJSONReadingOptions.AllowFragments)
+                                        print(dictData)
+                                    }
+                    
+                    
+                                }
+                                catch {
+                                    print("json error: \(error)")
+                                    let alert = UIAlertView(title: "TellTenMobile", message:"json error: \(error)", delegate: nil, cancelButtonTitle: "Ok")
+                                    alert.show()
+                                    
+                                }
+                
+                
+            }
+            task.resume()
+    
+}
+
+
+
 
 
 
