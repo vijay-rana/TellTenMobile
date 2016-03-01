@@ -319,14 +319,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
            // var phonesArray  = Array<Dictionary<String,String>>()
             for var i:Int = 0; i < ABMultiValueGetCount(phonesRef); i++ {
                 let label: NSString = ABMultiValueCopyLabelAtIndex(phonesRef, i).takeRetainedValue() as NSString
-                let value: NSString = ABMultiValueCopyValueAtIndex(phonesRef, i).takeRetainedValue() as! NSString
+                let value: NSString? = ABMultiValueCopyValueAtIndex(phonesRef, i).takeRetainedValue() as? NSString
                 
                 
                 if #available(iOS 8.0, *) {
                     
-                    if(label.length > 0 && value.length > 0)
+                    if(label.length > 0 && value?.length > 0)
                     {
-                        phoNumbArr.addObject(value)
+                        phoNumbArr.addObject(value!)
                         if let firstName: NSString = ABRecordCopyValue(contactPerson, kABPersonFirstNameProperty)?.takeRetainedValue() as? NSString  {
                             contactNmaePhonDic[firstName] = value
                             nameArr.addObject(firstName)
@@ -343,7 +343,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 } else {
                     // Fallback on earlier versions
                     
-                     phoNumbArr.addObject(value)
+                     phoNumbArr.addObject(value!)
                 }
             }
         }
