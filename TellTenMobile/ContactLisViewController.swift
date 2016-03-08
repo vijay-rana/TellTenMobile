@@ -309,56 +309,60 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let phoNumbArr = NSMutableArray()
         let nameArr = NSMutableArray()
         
-//get all contacts in array-----------------------------------
+        //get all contacts in array-----------------------------------
         let allContacts = ABAddressBookCopyArrayOfAllPeople(addressBookRef).takeRetainedValue() as Array
         
-//fetch all name from array-------------------
+        //fetch all name from array-------------------
         for record:ABRecordRef in allContacts
         {
             let contactPerson: ABRecordRef = record
-
+            
             //let lastName: String? = ABRecordCopyValue(contactPerson, kABPersonLastNameProperty).takeRetainedValue()as NSString as String
             
             //fetch all phone number from contact list ------
             let phonesRef: ABMultiValueRef = ABRecordCopyValue(contactPerson, kABPersonPhoneProperty).takeRetainedValue() as ABMultiValueRef
-           // var phonesArray  = Array<Dictionary<String,String>>()
-            for var i:Int = 0; i < ABMultiValueGetCount(phonesRef); i++ {
-                let label: NSString = ABMultiValueCopyLabelAtIndex(phonesRef, i).takeRetainedValue() as NSString
-                let value: NSString? = ABMultiValueCopyValueAtIndex(phonesRef, i).takeRetainedValue() as? NSString
+            for var i:Int = 0; i < ABMultiValueGetCount(phonesRef); i++
+            {
+                print(phonesRef,[i])
                 
-                
-                if #available(iOS 8.0, *) {
+                if (ABMultiValueCopyLabelAtIndex(phonesRef, i) != nil)
+                {
+                    let label: NSString = ABMultiValueCopyLabelAtIndex(phonesRef, i).takeRetainedValue() as NSString
+                    let value: NSString? = ABMultiValueCopyValueAtIndex(phonesRef, i).takeRetainedValue() as? NSString
                     
-                    if(label.length > 0 && value?.length > 0)
+                    if #available(iOS 8.0, *)
+                    {
+                        if(label.length > 0 && value?.length > 0)
+                        {
+                            print(phonesRef)
+                            
+                            
+                            
+                            phoNumbArr.addObject(value!)
+                            if let firstName: NSString = ABRecordCopyValue(contactPerson, kABPersonFirstNameProperty)?.takeRetainedValue() as? NSString
+                            {
+                                print(firstName)
+                                contactNmaePhonDic[firstName] = value
+                                nameArr.addObject(firstName)
+                            }
+                            break
+                        }
+                    }
+                    else
                     {
                         phoNumbArr.addObject(value!)
-                        if let firstName: NSString = ABRecordCopyValue(contactPerson, kABPersonFirstNameProperty)?.takeRetainedValue() as? NSString  {
-                            contactNmaePhonDic[firstName] = value
-                            nameArr.addObject(firstName)
-                        }
-                        break
+                        print(phoNumbArr)
                     }
                     
-//                    if(label.containsString("Mobile") == true)
-//                    {
-//                        // print(firstName,"==>",value)
-//                        phoNumbArr.addObject(value)
-//                    }
-                  
-                } else {
-                    // Fallback on earlier versions
                     
-                     phoNumbArr.addObject(value!)
                 }
+                
             }
         }
         
-        
-        print(phoNumbArr)
-        
         //sort array alphabatically---------
-         nameArr.sortUsingSelector("localizedCaseInsensitiveCompare:")
-      
+        nameArr.sortUsingSelector("localizedCaseInsensitiveCompare:")
+        
         //add phone book to array -----
         let contactNmaeArr = NSMutableArray()
         contactNmaeArr.addObjectsFromArray([nameArr,phoNumbArr])
