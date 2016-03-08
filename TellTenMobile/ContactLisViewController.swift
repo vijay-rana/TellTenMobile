@@ -168,14 +168,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         tableViewCells.backgroundColor = UIColor.clearColor()
         
         tableViewCells.creatingSubviewForCell()
-       tableViewCells.contactImageView()
-        
+        tableViewCells.contactImageView()
+        tableViewCells.setImageViewImage()
         let contactName = contactNmaePhonArray.objectAtIndex(0).objectAtIndex(indexPath.row) as! String
         tableViewCells.contactNameLabel(contactName)
         
         return tableViewCells
     }
     
+  
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 75
     }
@@ -184,6 +185,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
          addIndexNumber(indexPath)
         let cellObj = tableView.cellForRowAtIndexPath(indexPath) as! ContacListTableViewCell
         cellObj.changeImageFromSelction(true)
+        
     
     
     }
@@ -283,6 +285,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 }, failure: { (errorMassege) -> Void in
                      ActivityLoaderView.stopAnimating()
                     ActivityLoaderView.removeFromSuperview()
+                    
+                    let alrt = UIAlertView(title: "TellTenMobile", message: errorMassege as String, delegate: nil, cancelButtonTitle: "Ok")
+                    alrt.show()
              })
             
         }

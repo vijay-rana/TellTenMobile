@@ -16,7 +16,7 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
     var containStoreId = 0
     let telltenLblImgView = UIImageView()
     var checkButtonstr = NSString()
-    
+    var checkDataRecieve = 0
     var loaderView = LoaderView()
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -30,9 +30,6 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
        
         self.view.backgroundColor = CustomColor().customColorWithLightGray()
       
-        //requesting store from server
-        StoreRequest().requestForStoreDataFromServer()
-        
         // Do any additional setup after loading the view.
         //customiz navigation bar
         customNavigationBartView()
@@ -50,7 +47,26 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
         InntializingSubmitBuuton()
       
         
+        
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        //requesting store from server
+       gettStoreRequest()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "gettStoreRequest", name:UIApplicationWillEnterForegroundNotification, object: nil)
+      
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIApplicationWillEnterForegroundNotification, object: nil)
+    }
+    
+    func gettStoreRequest()
+    {
+         StoreRequest().requestForStoreDataFromServer()
+    }
+    
+  
     
     //MARK:custom NavigationBar
 ////-------------------------------######################--custom NavigationBar--##########################------------------------
@@ -343,8 +359,6 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
                     
                     selectListTableView.reloadData()
                     
-                    
-                    
                     if(selectConditionBool == true)
                     {
                         selectListTableView.frame = CGRectMake(10, SelectCouponButton.frame.height + SelectCouponButton.frame.origin.y, storeSubView.frame.width - 20, 0)
@@ -513,8 +527,37 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
    
     func loadingDataWithUrl (urlString:NSString)
     {
-        //print(urlString)
-        let urlStore = NSURL(string: urlString as String)
+        //splitting url -----
+        let substrLocation = urlString.rangeOfString(".jpg").location
+        let substring2 = urlString.substringToIndex(substrLocation)
+        var imgUrlString = substring2
+       
+        
+        if (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+        {
+            imgUrlString = imgUrlString + "3x" + ".jpg"
+        }
+        else{
+            if(self.view.frame.height == 480)
+            {
+                imgUrlString = imgUrlString + ".jpg"
+            }
+            else if  (self.view.frame.height == 568)
+            {
+                imgUrlString = imgUrlString + "2x" + ".jpg"
+            }
+            else if  (self.view.frame.height == 667)
+            {
+                imgUrlString = imgUrlString + "2x" + ".jpg"
+            }
+            else
+            {
+                imgUrlString = imgUrlString + "3x" + ".jpg"
+            }
+        }
+        
+        print(imgUrlString)
+        let urlStore = NSURL(string: imgUrlString as String)
         let urlRequset = NSURLRequest(URL:urlStore!)
         
         

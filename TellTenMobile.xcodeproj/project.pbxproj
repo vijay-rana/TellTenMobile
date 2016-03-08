@@ -38,6 +38,7 @@
 		629CF6DE1C50FD1100A8F4C1 /* 640X960.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6D91C50FD1100A8F4C1 /* 640X960.png */; };
 		629CF6DF1C50FD1100A8F4C1 /* 640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6DA1C50FD1100A8F4C1 /* 640x1136.png */; };
 		629CF6E01C50FD1100A8F4C1 /* 1242-x-2208.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6DB1C50FD1100A8F4C1 /* 1242-x-2208.png */; };
+		62A8DE841C8E930C00FD27C0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A8DE831C8E930C00FD27C0 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		629CF6D91C50FD1100A8F4C1 /* 640X960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 640X960.png; path = "images/Spalsh Screen/640X960.png"; sourceTree = SOURCE_ROOT; };
 		629CF6DA1C50FD1100A8F4C1 /* 640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 640x1136.png; path = "images/Spalsh Screen/640x1136.png"; sourceTree = SOURCE_ROOT; };
 		629CF6DB1C50FD1100A8F4C1 /* 1242-x-2208.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1242-x-2208.png"; path = "images/Spalsh Screen/1242-x-2208.png"; sourceTree = SOURCE_ROOT; };
+		62A8DE831C8E930C00FD27C0 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				620F441B1C844A0400069342 /* ActivityLoaderView.swift */,
 				6250B8F21C4E5291009D6735 /* CustomColor.swift */,
 				6239A68A1C6B150900B86107 /* LoaderView.swift */,
+				62A8DE831C8E930C00FD27C0 /* Reachability.swift */,
 				629CF6C71C50C26900A8F4C1 /* checkImages */,
 				620A5EFE1C4CA8B9008EB71E /* Main.storyboard */,
 				620A5F041C4CA8B9008EB71E /* Assets.xcassets */,
@@ -254,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62A8DE841C8E930C00FD27C0 /* Reachability.swift in Sources */,
 				620A5EFD1C4CA8B9008EB71E /* ContactLisViewController.swift in Sources */,
 				620F441C1C844A0400069342 /* ActivityLoaderView.swift in Sources */,
 				620A5F031C4CA8B9008EB71E /* TellTenMobile.xcdatamodeld in Sources */,
@@ -379,7 +383,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Balak Ram Sharma (9Y3L2SD852)";
 				INFOPLIST_FILE = TellTenMobile/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.TellTenMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -397,7 +401,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Balak Ram Sharma (9Y3L2SD852)";
 				INFOPLIST_FILE = TellTenMobile/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.TellTenMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";

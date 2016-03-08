@@ -13,6 +13,7 @@ class ContacListTableViewCell: UITableViewCell {
     //let contactNameLbl = UILabel()
     let contactImgView = UIView()
     let cellBaseView = UIView()
+    var unSelection = true
     
     let imageViewTick = UIImageView()
     override func awakeFromNib() {
@@ -38,12 +39,22 @@ class ContacListTableViewCell: UITableViewCell {
         
         //imageView
          imageViewTick.frame = CGRectMake(contactImgView.frame.width / 2 - 15, contactImgView.frame.height / 2 - 15, 30, 30)
-        imageViewTick.image = UIImage(named: "UncheckArrow")
+        //imageViewTick.image = UIImage(named: "UncheckArrow")
+
         contactImgView.addSubview(imageViewTick)
     }
     
+    func setImageViewImage ()
+         {
+            if(unSelection)
+            {
+                imageViewTick.image = UIImage(named: "UncheckArrow")
+            }
+            
+    }
     func changeImageFromSelction (Selection:Bool)
     {
+        unSelection = false
         if(Selection == true)
         {
             self.imageViewTick.image = UIImage(named: "checkArrow")
@@ -53,6 +64,7 @@ class ContacListTableViewCell: UITableViewCell {
         {
             imageViewTick.image = UIImage(named: "UncheckArrow")
         }
+        
         
     }
  
