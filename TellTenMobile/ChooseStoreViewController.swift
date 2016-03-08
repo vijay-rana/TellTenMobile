@@ -505,10 +505,15 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
        
         if(checkButtonstr.isEqualToString("selectStoreButtonFunction"))
         {
+            print(indexPath.row)
+            
              SelectCouponButton.setTitle("Select", forState: UIControlState.Normal)
              SelectButton.setTitle(storeDataArray.objectAtIndex(0).objectAtIndex(2).objectAtIndex(indexPath.row) as? String, forState: UIControlState.Normal)
             loadingDataWithUrl(storeDataArray.objectAtIndex(0).objectAtIndex(0).objectAtIndex(indexPath.row) as! String)
-            StoreRequest().requestForCouponFromServer(NSString(format: "%d", indexPath.row))
+            //StoreRequest().requestForCouponFromServer(NSString(format: "%d", indexPath.row))
+            
+            StoreRequest().requestForCouponFromServer(storeDataArray.objectAtIndex(0).objectAtIndex(1).objectAtIndex(indexPath.row) as! String)
+            
               selectStoreButtonFunction()
 //            loaderView.frame = self.view.frame
 //            loaderView.startLoading()
