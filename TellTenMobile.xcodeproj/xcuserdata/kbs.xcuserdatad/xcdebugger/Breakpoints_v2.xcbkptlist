@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TellTenMobile/ContactLisViewController.swift"
-            timestampString = "479114557.406708"
+            timestampString = "479304052.387126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "310"
-            endingLineNumber = "310"
+            startingLineNumber = "429"
+            endingLineNumber = "429"
             landmarkName = "getAllContactsFromAddresBook()"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TellTenMobile/ContactLisViewController.swift"
-            timestampString = "479133368.984071"
+            timestampString = "479304052.387126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409"
+            startingLineNumber = "528"
+            endingLineNumber = "528"
             landmarkName = "openSettingFunction()"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TellTenMobile/ContactLisViewController.swift"
-            timestampString = "479133368.984071"
+            timestampString = "479304052.387126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "411"
-            endingLineNumber = "411"
+            startingLineNumber = "530"
+            endingLineNumber = "530"
             landmarkName = "openSettingFunction()"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TellTenMobile/ContactLisViewController.swift"
-            timestampString = "479133368.984071"
+            timestampString = "479304052.387126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "413"
-            endingLineNumber = "413"
+            startingLineNumber = "532"
+            endingLineNumber = "532"
             landmarkName = "openSettingFunction()"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TellTenMobile/ContactLisViewController.swift"
-            timestampString = "479133368.984071"
+            timestampString = "479304052.387126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "417"
-            endingLineNumber = "417"
+            startingLineNumber = "536"
+            endingLineNumber = "536"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -137,8 +137,8 @@
                   symbolName = "TellTenMobile.ChooseStoreViewController.cellImageView.getter : __ObjC.UIImageView"
                   moduleName = "TellTenMobile"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kbs/Projects/Nico/Coupon%20App/Code/TellTenMobile/TellTenMobile/ChooseStoreViewController.swift"
-                  timestampString = "479135520.151515"
+                  urlString = "file:///Users/kbs/Projects/nico%20project%20/GitTellTen/TellTenMobile/TellTenMobile/ChooseStoreViewController.swift"
+                  timestampString = "479303559.114257"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -152,8 +152,8 @@
                   symbolName = "TellTenMobile.ChooseStoreViewController.cellImageView.setter : __ObjC.UIImageView"
                   moduleName = "TellTenMobile"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kbs/Projects/Nico/Coupon%20App/Code/TellTenMobile/TellTenMobile/ChooseStoreViewController.swift"
-                  timestampString = "479135520.151739"
+                  urlString = "file:///Users/kbs/Projects/nico%20project%20/GitTellTen/TellTenMobile/TellTenMobile/ChooseStoreViewController.swift"
+                  timestampString = "479303559.114676"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -167,8 +167,8 @@
                   symbolName = "TellTenMobile.ChooseStoreViewController.cellImageView.materializeForSet : __ObjC.UIImageView"
                   moduleName = "TellTenMobile"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kbs/Projects/Nico/Coupon%20App/Code/TellTenMobile/TellTenMobile/ChooseStoreViewController.swift"
-                  timestampString = "479135520.151951"
+                  urlString = "file:///Users/kbs/Projects/nico%20project%20/GitTellTen/TellTenMobile/TellTenMobile/ChooseStoreViewController.swift"
+                  timestampString = "479303559.115056"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -182,8 +182,8 @@
                   symbolName = "TellTenMobile.ChooseStoreViewController.init (TellTenMobile.ChooseStoreViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; TellTenMobile.ChooseStoreViewController"
                   moduleName = "TellTenMobile"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kbs/Projects/Nico/Coupon%20App/Code/TellTenMobile/TellTenMobile/ChooseStoreViewController.swift"
-                  timestampString = "479135520.152115"
+                  urlString = "file:///Users/kbs/Projects/nico%20project%20/GitTellTen/TellTenMobile/TellTenMobile/ChooseStoreViewController.swift"
+                  timestampString = "479303559.115236"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "479"
@@ -197,8 +197,8 @@
                   symbolName = "TellTenMobile.ChooseStoreViewController.init (TellTenMobile.ChooseStoreViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;TellTenMobile.ChooseStoreViewController&gt;"
                   moduleName = "TellTenMobile"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kbs/Projects/Nico/Coupon%20App/Code/TellTenMobile/TellTenMobile/ChooseStoreViewController.swift"
-                  timestampString = "479135520.152258"
+                  urlString = "file:///Users/kbs/Projects/nico%20project%20/GitTellTen/TellTenMobile/TellTenMobile/ChooseStoreViewController.swift"
+                  timestampString = "479303559.115428"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "479"
@@ -359,11 +359,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TellTenMobile/ContactLisViewController.swift"
-            timestampString = "479133368.984071"
+            timestampString = "479304052.387126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
+            startingLineNumber = "481"
+            endingLineNumber = "481"
             landmarkName = "getAllContactsFromAddresBook()"
             landmarkType = "5">
          </BreakpointContent>
@@ -375,11 +375,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TellTenMobile/ContactLisViewController.swift"
-            timestampString = "479024616.668602"
+            timestampString = "479304052.387126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "353"
+            endingLineNumber = "353"
             landmarkName = "submitButtonAction()"
             landmarkType = "5">
          </BreakpointContent>
@@ -391,11 +391,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TellTenMobile/ContactLisViewController.swift"
-            timestampString = "479024616.668602"
+            timestampString = "479304052.387126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
+            startingLineNumber = "343"
+            endingLineNumber = "343"
             landmarkName = "InntializingSubmitBuuton()"
             landmarkType = "5">
          </BreakpointContent>
@@ -407,11 +407,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TellTenMobile/ContactLisViewController.swift"
-            timestampString = "479133368.984071"
+            timestampString = "479304052.387126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "363"
-            endingLineNumber = "363"
+            startingLineNumber = "482"
+            endingLineNumber = "482"
             landmarkName = "getAllContactsFromAddresBook()"
             landmarkType = "5">
          </BreakpointContent>
@@ -513,11 +513,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TellTenMobile/ContactLisViewController.swift"
-            timestampString = "479024616.668602"
+            timestampString = "479304052.387126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
+            startingLineNumber = "387"
+            endingLineNumber = "387"
             landmarkName = "submitButtonAction()"
             landmarkType = "5">
             <Locations>
@@ -528,12 +528,12 @@
                   symbolName = "TellTenMobile.ViewController.submitButtonAction (TellTenMobile.ViewController)() -&gt; ()"
                   moduleName = "TellTenMobile"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kbs/Projects/Nico/Coupon%20App/Code/TellTenMobile/TellTenMobile/ContactLisViewController.swift"
-                  timestampString = "479135520.186629"
+                  urlString = "file:///Users/kbs/Projects/nico%20project%20/GitTellTen/TellTenMobile/TellTenMobile/ContactLisViewController.swift"
+                  timestampString = "479303559.134725"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "269"
-                  endingLineNumber = "269"
+                  startingLineNumber = "387"
+                  endingLineNumber = "387"
                   offsetFromSymbolStart = "4411">
                </Location>
                <Location
@@ -543,12 +543,12 @@
                   symbolName = "TellTenMobile.ViewController.(submitButtonAction (TellTenMobile.ViewController) -&gt; () -&gt; ()).(closure #3)"
                   moduleName = "TellTenMobile"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kbs/Projects/Nico/Coupon%20App/Code/TellTenMobile/TellTenMobile/ContactLisViewController.swift"
-                  timestampString = "479135520.186799"
+                  urlString = "file:///Users/kbs/Projects/nico%20project%20/GitTellTen/TellTenMobile/TellTenMobile/ContactLisViewController.swift"
+                  timestampString = "479303559.134889"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "271"
-                  endingLineNumber = "271"
+                  startingLineNumber = "389"
+                  endingLineNumber = "389"
                   offsetFromSymbolStart = "37">
                </Location>
             </Locations>
@@ -561,11 +561,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TellTenMobile/ContactLisViewController.swift"
-            timestampString = "479114557.406708"
+            timestampString = "479304052.387126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
             landmarkName = "submitButtonAction()"
             landmarkType = "5">
          </BreakpointContent>
@@ -577,13 +577,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TellTenMobile/ContacListTableViewCell.swift"
-            timestampString = "479027689.563739"
+            timestampString = "479287440.288674"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "setImageViewImage()"
-            landmarkType = "5">
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "ContacListTableViewCell"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -647,6 +647,118 @@
             startingLineNumber = "508"
             endingLineNumber = "508"
             landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TellTenMobile/ContacListTableViewCell.swift"
+            timestampString = "479296226.441836"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "ContacListTableViewCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TellTenMobile/ContactLisViewController.swift"
+            timestampString = "479304052.387126"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "298"
+            endingLineNumber = "298"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TellTenMobile/ContactLisViewController.swift"
+            timestampString = "479304052.387126"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TellTenMobile/ContactLisViewController.swift"
+            timestampString = "479304052.387126"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TellTenMobile/ContactLisViewController.swift"
+            timestampString = "479304052.387126"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TellTenMobile/ContactLisViewController.swift"
+            timestampString = "479304052.387126"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TellTenMobile/ContactLisViewController.swift"
+            timestampString = "479304052.387126"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

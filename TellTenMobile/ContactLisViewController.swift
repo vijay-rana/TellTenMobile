@@ -23,6 +23,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     let customNavigationBartViewobj = UIView()
     
     let rowIndexNumberarr = NSMutableArray()
+    let selectedIndexPath = NSMutableDictionary()
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,8 +58,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
 
     override func viewWillAppear(animated: Bool) {
-        contactListTableView.reloadData()
+         selectedIndexPath.removeAllObjects()
          rowIndexNumberarr.removeAllObjects()
+         contactListTableView.reloadData()
     }
     
     
@@ -158,22 +162,132 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var cellImageView = UIImageView()
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let tableViewCells = tableView.dequeueReusableCellWithIdentifier("NameCell", forIndexPath: indexPath) as! ContacListTableViewCell
-       
-        tableViewCells.layer.shadowOffset = CGSize(width: 3, height: 3)
-        tableViewCells.layer.shadowOpacity = 0.3
-        tableViewCells.layer.shadowRadius = 2
         
-        tableViewCells.selectionStyle = UITableViewCellSelectionStyle.None
-        tableViewCells.backgroundColor = UIColor.clearColor()
         
-        tableViewCells.creatingSubviewForCell()
-        tableViewCells.contactImageView()
-        tableViewCells.setImageViewImage()
+        var customTableViewCells = ContacListTableViewCell()
+        
+        
+        if(selectedIndexPath.count > 0)
+        {
+            
+            
+            if(selectedIndexPath.objectForKey(indexPath.row) != nil)
+            {
+                
+                if(indexPath == selectedIndexPath.objectForKey(indexPath.row) as! NSIndexPath)
+                {
+                    customTableViewCells = tableView.dequeueReusableCellWithIdentifier("NameCell", forIndexPath: selectedIndexPath.objectForKey(indexPath.row) as! NSIndexPath) as! ContacListTableViewCell
+                    customTableViewCells.imageViewTick.image = UIImage(named: "checkArrow")
+                    customTableViewCells.layer.shadowOffset = CGSize(width: 3, height: 3)
+                    customTableViewCells.layer.shadowOpacity = 0.3
+                    customTableViewCells.layer.shadowRadius = 2
+                    
+                    customTableViewCells.selectionStyle = UITableViewCellSelectionStyle.None
+                    customTableViewCells.backgroundColor = UIColor.clearColor()
+                    
+                    customTableViewCells.creatingSubviewForCell()
+                    customTableViewCells.contactImageView()
+                    
+                    
+                    
+                    let contactName = contactNmaePhonArray.objectAtIndex(0).objectAtIndex(indexPath.row) as! String
+                    customTableViewCells.contactNameLabel(contactName)
+                    
+                   
+                    print("same",indexPath.row)
+                }
+                else
+                {
+                 customTableViewCells = tableView.dequeueReusableCellWithIdentifier("NameCell", forIndexPath: indexPath) as! ContacListTableViewCell
+                   
+                    customTableViewCells.layer.shadowOffset = CGSize(width: 3, height: 3)
+                    customTableViewCells.layer.shadowOpacity = 0.3
+                    customTableViewCells.layer.shadowRadius = 2
+                    
+                    customTableViewCells.selectionStyle = UITableViewCellSelectionStyle.None
+                    customTableViewCells.backgroundColor = UIColor.clearColor()
+                    
+                    customTableViewCells.creatingSubviewForCell()
+                    customTableViewCells.contactImageView()
+                    customTableViewCells.imageViewTick.image = UIImage(named: "UncheckArrow")
+                    
+                    
+                    let contactName = contactNmaePhonArray.objectAtIndex(0).objectAtIndex(indexPath.row) as! String
+                    customTableViewCells.contactNameLabel(contactName)
+                  
+                }
+                
+           
+        
+            }
+            else
+            {
+                
+                customTableViewCells = tableView.dequeueReusableCellWithIdentifier("NameCell", forIndexPath: indexPath) as! ContacListTableViewCell
+                customTableViewCells.imageViewTick.image = UIImage(named: "UncheckArrow")
+                
+                customTableViewCells.layer.shadowOffset = CGSize(width: 3, height: 3)
+                customTableViewCells.layer.shadowOpacity = 0.3
+                customTableViewCells.layer.shadowRadius = 2
+                
+                customTableViewCells.selectionStyle = UITableViewCellSelectionStyle.None
+                customTableViewCells.backgroundColor = UIColor.clearColor()
+                
+                customTableViewCells.creatingSubviewForCell()
+                customTableViewCells.contactImageView()
+                customTableViewCells.imageViewTick.image = UIImage(named: "UncheckArrow")
+                
+                
+                let contactName = contactNmaePhonArray.objectAtIndex(0).objectAtIndex(indexPath.row) as! String
+                customTableViewCells.contactNameLabel(contactName)
+
+                
+            }
+      
+        }
+        else
+        {
+            
+             customTableViewCells = tableView.dequeueReusableCellWithIdentifier("NameCell", forIndexPath: indexPath) as! ContacListTableViewCell
+            customTableViewCells.imageViewTick.image = UIImage(named: "UncheckArrow")
+            
+            customTableViewCells.layer.shadowOffset = CGSize(width: 3, height: 3)
+            customTableViewCells.layer.shadowOpacity = 0.3
+            customTableViewCells.layer.shadowRadius = 2
+            
+            customTableViewCells.selectionStyle = UITableViewCellSelectionStyle.None
+            customTableViewCells.backgroundColor = UIColor.clearColor()
+            
+            customTableViewCells.creatingSubviewForCell()
+            customTableViewCells.contactImageView()
+            customTableViewCells.imageViewTick.image = UIImage(named: "UncheckArrow")
+            
+            
+            let contactName = contactNmaePhonArray.objectAtIndex(0).objectAtIndex(indexPath.row) as! String
+            customTableViewCells.contactNameLabel(contactName)
+            
+
+            
+        }
+
+        customTableViewCells.layer.shadowOffset = CGSize(width: 3, height: 3)
+        customTableViewCells.layer.shadowOpacity = 0.3
+        customTableViewCells.layer.shadowRadius = 2
+        
+        customTableViewCells.selectionStyle = UITableViewCellSelectionStyle.None
+        customTableViewCells.backgroundColor = UIColor.clearColor()
+        
+        customTableViewCells.creatingSubviewForCell()
+        customTableViewCells.contactImageView()
+        
+        
+        
         let contactName = contactNmaePhonArray.objectAtIndex(0).objectAtIndex(indexPath.row) as! String
-        tableViewCells.contactNameLabel(contactName)
+        customTableViewCells.contactNameLabel(contactName)
         
-        return tableViewCells
+        
+        
+        return customTableViewCells
     }
     
   
@@ -184,15 +298,16 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
          addIndexNumber(indexPath)
         let cellObj = tableView.cellForRowAtIndexPath(indexPath) as! ContacListTableViewCell
-        cellObj.changeImageFromSelction(true)
+        cellObj.imageViewTick.image = UIImage(named: "checkArrow")
         
-    
-    
+       
+        
+   
     }
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         removeIndexPath(indexPath)
         let cellObj = tableView.cellForRowAtIndexPath(indexPath) as! ContacListTableViewCell
-        cellObj.changeImageFromSelction(false)
+          cellObj.imageViewTick.image = UIImage(named: "UncheckArrow")
         
     }
     
@@ -201,6 +316,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     {
         
         rowIndexNumberarr.addObject(rowIndexPath.row)
+        selectedIndexPath.setObject(rowIndexPath, forKey: rowIndexPath.row)
        
     }
     func removeIndexPath (rowIndexPath: NSIndexPath)
@@ -210,7 +326,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         {
             let indexCell = rowIndexNumberarr.indexOfObject(rowIndexPath.row)
             rowIndexNumberarr.removeObjectAtIndex(indexCell)
+            
         }
+      
+         selectedIndexPath.removeObjectForKey(rowIndexPath.row)
         
         
     }
