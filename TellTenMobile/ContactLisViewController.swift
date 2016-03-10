@@ -8,8 +8,9 @@
 
 import UIKit
 import AddressBook
+import MessageUI
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, MFMessageComposeViewControllerDelegate {
 
     
    var addressBookRef : ABAddressBook!
@@ -353,7 +354,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         print(rowIndexNumberarr)
        // self.navigationController?.pushViewController(CouponViewController(), animated: true)
         
-        if(rowIndexNumberarr.count > 9)
+        //if(rowIndexNumberarr.count > 9)
+       if(true)
         {
             let ActivityLoaderView = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width / 2 - 37.5, self.view.frame.size.height / 2 - 37.5, 75, 75 ))
             
@@ -371,6 +373,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                     
             }
 
+            var SelectedNumberList: NSMutableArray = []
             
             var NumberJSON:String =  "{\"numberList\":["
             for count in rowIndexNumberarr {
@@ -378,10 +381,25 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 NumberJSON = NumberJSON + "{\"name\": \"" + String(contactNmaePhonArray.objectAtIndex(0).objectAtIndex(Int(count as! NSNumber))) + "\","
                 NumberJSON = NumberJSON +  "phoneNumber\": \""  + String(contactNmaePhonDic[String(contactNmaePhonArray.objectAtIndex(0).objectAtIndex(Int(count as! NSNumber)))]!) + "\"},"
                 
+                SelectedNumberList.addObject(String(contactNmaePhonDic[String(contactNmaePhonArray.objectAtIndex(0).objectAtIndex(Int(count as! NSNumber)))]!))
+                
             }
             
             NumberJSON = String(NumberJSON.characters.dropLast())
             NumberJSON =  NumberJSON + "]}"
+            
+            
+            print(SelectedNumberList as NSArray as! [String])
+            
+            if (MFMessageComposeViewController.canSendText()) {
+                let controller = MFMessageComposeViewController()
+                controller.body =  CreateBody()
+                controller.recipients = SelectedNumberList as NSArray as! [String]
+                controller.messageComposeDelegate = self
+                self.presentViewController(controller, animated: true, completion: nil)
+            }
+            
+            
             
             //getting data from server
          
@@ -420,6 +438,20 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     
+    
+    func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
+        //... handle sms screen actions
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+    }
+    
+    func CreateBody() -> String
+    {
+        return "Hey, I just got " + DTO.CouponDescription + " @" + DTO.Store + ". Download TellTenMobile app and tell your friends to receive the coupon!"
+    }
     
     //MARK: getting data from address book
 //function for getting user contacts from contact book--------------##########################----------------

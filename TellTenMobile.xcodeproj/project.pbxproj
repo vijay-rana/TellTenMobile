@@ -39,6 +39,7 @@
 		629CF6DF1C50FD1100A8F4C1 /* 640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6DA1C50FD1100A8F4C1 /* 640x1136.png */; };
 		629CF6E01C50FD1100A8F4C1 /* 1242-x-2208.png in Resources */ = {isa = PBXBuildFile; fileRef = 629CF6DB1C50FD1100A8F4C1 /* 1242-x-2208.png */; };
 		62A8DE841C8E930C00FD27C0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A8DE831C8E930C00FD27C0 /* Reachability.swift */; };
+		62F1630F1C91A10500D930A5 /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F1630E1C91A10500D930A5 /* DTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		629CF6DA1C50FD1100A8F4C1 /* 640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 640x1136.png; path = "images/Spalsh Screen/640x1136.png"; sourceTree = SOURCE_ROOT; };
 		629CF6DB1C50FD1100A8F4C1 /* 1242-x-2208.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1242-x-2208.png"; path = "images/Spalsh Screen/1242-x-2208.png"; sourceTree = SOURCE_ROOT; };
 		62A8DE831C8E930C00FD27C0 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		62F1630E1C91A10500D930A5 /* DTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		620A5EF91C4CA8B9008EB71E /* TellTenMobile */ = {
 			isa = PBXGroup;
 			children = (
+				62F1630D1C91A0F200D930A5 /* DTO */,
 				6226FE7C1C5111A000FA70BF /* Icon Images */,
 				6226FE701C5103B800FA70BF /* telten_mobile.png */,
 				629CF6E11C50FD1800A8F4C1 /* Splash Screen */,
@@ -170,6 +173,14 @@
 				629CF6DB1C50FD1100A8F4C1 /* 1242-x-2208.png */,
 			);
 			name = "Splash Screen";
+			sourceTree = "<group>";
+		};
+		62F1630D1C91A0F200D930A5 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				62F1630E1C91A10500D930A5 /* DTO.swift */,
+			);
+			name = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +278,7 @@
 				6250B8F31C4E5291009D6735 /* CustomColor.swift in Sources */,
 				6239A68B1C6B150A00B86107 /* LoaderView.swift in Sources */,
 				6250B8F11C4E1B94009D6735 /* ContacListTableViewCell.swift in Sources */,
+				62F1630F1C91A10500D930A5 /* DTO.swift in Sources */,
 				6288EA501C59FAB900D85AD8 /* StoreRequest.swift in Sources */,
 				629985231C4F624B0068BB41 /* CouponViewController.swift in Sources */,
 				6288EA4C1C59F8FB00D85AD8 /* CommonObjC.m in Sources */,
@@ -385,7 +397,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TellTenMobile/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kindlebit.TellTenMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -405,7 +417,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TellTenMobile/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kindlebit.TellTenMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";

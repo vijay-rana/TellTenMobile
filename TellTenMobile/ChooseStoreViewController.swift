@@ -509,6 +509,11 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
             
              SelectCouponButton.setTitle("Select", forState: UIControlState.Normal)
              SelectButton.setTitle(storeDataArray.objectAtIndex(0).objectAtIndex(2).objectAtIndex(indexPath.row) as? String, forState: UIControlState.Normal)
+            
+            DTO.Store = (SelectButton.titleLabel?.text!)!
+            
+        
+            
             loadingDataWithUrl(storeDataArray.objectAtIndex(0).objectAtIndex(0).objectAtIndex(indexPath.row) as! String)
             //StoreRequest().requestForCouponFromServer(NSString(format: "%d", indexPath.row))
             
@@ -522,6 +527,9 @@ class ChooseStoreViewController: UIViewController,UITableViewDataSource,UITableV
         else if(checkButtonstr.isEqualToString("selectCouponButtonFunction"))
         {
             SelectCouponButton.setTitle(storeDataArray.objectAtIndex(0).objectAtIndex(2).objectAtIndex(indexPath.row) as? String, forState: UIControlState.Normal)
+            
+             DTO.CouponDescription = (SelectCouponButton.titleLabel?.text!)!
+            
             storeDataStruct.couponId = (storeDataArray.objectAtIndex(0).objectAtIndex(1).objectAtIndex(indexPath.row) as? NSString)!
             print(storeDataStruct.couponId)
             selectCouponButtonFunction()
